@@ -1,0 +1,70 @@
+{
+    "sourceFile": "02_fundamentos/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1649273215969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649273282183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+// 1 - numbers\n+let x: number = 10;\n+\n+console.log(x);;\n+\n"
+                },
+                {
+                    "date": 1649273404111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n // 1 - numbers\n let x: number = 10;\n \n-console.log(x);;\n+console.log(x);\n \n+x = 16;\n+\n+console.log(typeof x);\n"
+                },
+                {
+                    "date": 1649273463304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,10 @@\n \n x = 16;\n \n console.log(typeof x);\n+\n+const y: number = 10.654685;\n+\n+console.log(y);\n+console.log(typeof y);\n+\n"
+                },
+                {
+                    "date": 1649273529838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,6 @@\n const y: number = 10.654685;\n \n console.log(y);\n console.log(typeof y);\n+console.log(y.toPrecision(3));\n \n"
+                },
+                {
+                    "date": 1649273826540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,7 @@\n console.log(y);\n console.log(typeof y);\n console.log(y.toPrecision(3));\n \n+// 2 - string\n+const firstName: string = \"Lincoln\";\n+console.log(firstName.toLocaleUpperCase());\n"
+                },
+                {
+                    "date": 1649273862840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,4 +15,6 @@\n \n // 2 - string\n const firstName: string = \"Lincoln\";\n console.log(firstName.toLocaleUpperCase());\n+\n+let fullName: string;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649273893358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,7 @@\n // 2 - string\n const firstName: string = \"Lincoln\";\n console.log(firstName.toLocaleUpperCase());\n \n-let fullName: string;\n\\ No newline at end of file\n+let fullName: string;\n+\n+const lastName: string = \"Ruteski\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649273908993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,7 @@\n console.log(firstName.toLocaleUpperCase());\n \n let fullName: string;\n \n-const lastName: string = \"Ruteski\";\n\\ No newline at end of file\n+const lastName: string = \"Ruteski\";\n+\n+fullName = firstName + lastName;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649273944076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,5 +20,7 @@\n let fullName: string;\n \n const lastName: string = \"Ruteski\";\n \n-fullName = firstName + lastName;\n\\ No newline at end of file\n+fullName = firstName + ' ' + lastName;\n+console.log(fullName);\n+console.log(typeof fullName);\n"
+                },
+                {
+                    "date": 1649274049117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,4 +23,11 @@\n \n fullName = firstName + ' ' + lastName;\n console.log(fullName);\n console.log(typeof fullName);\n+\n+\n+// 3 - boolean\n+let a: boolean = false;\n+console.log(a);\n+console.log(typeof a);\n+\n"
+                },
+                {
+                    "date": 1649274408837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,4 +30,11 @@\n let a: boolean = false;\n console.log(a);\n console.log(typeof a);\n \n+\n+// 4 - ingerence e annotation\n+const ann: string = \"teste\";\n+const inf = 'teste';\n+console.log(typeof ann);\n+console.log(typeof inf);\n+\n"
+                },
+                {
+                    "date": 1649274567972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,8 @@\n \n \n // 4 - ingerence e annotation\n const ann: string = \"teste\";\n-const inf = 'teste';\n+let inf = 'teste';\n console.log(typeof ann);\n console.log(typeof inf);\n \n"
+                },
+                {
+                    "date": 1649274652615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,4 +37,5 @@\n let inf = 'teste';\n console.log(typeof ann);\n console.log(typeof inf);\n \n+console.log('testando');\n"
+                }
+            ],
+            "date": 1649273215969,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

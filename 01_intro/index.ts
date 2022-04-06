@@ -9,3 +9,10 @@ function greetings(nome: string) {
 greetings(nome);
 // greetings(sobrenome);
 // greetings(x);
+
+
+function soma(a: number, b: number): number {
+  return a + b;
+}
+
+console.log(soma(15, 35));

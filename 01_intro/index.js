@@ -7,3 +7,7 @@ function greetings(nome) {
 greetings(nome);
 // greetings(sobrenome);
 // greetings(x);
+function soma(a, b) {
+    return a + b;
+}
+console.log(soma(15, 35));
