@@ -1,0 +1,286 @@
+{
+    "sourceFile": "03_avancando_em_tipos/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 67,
+            "patches": [
+                {
+                    "date": 1649275154789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649275174621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n // 1 - arrays\n let numbers: number[] = [1, 2, 3];\n numbers.push(5);\n+console.log(numbers[2]);;\n \n"
+                },
+                {
+                    "date": 1649275249103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n // 1 - arrays\n let numbers: number[] = [1, 2, 3];\n numbers.push(5);\n-console.log(numbers[2]);;\n+console.log(numbers[2]);\n \n+const nomes: string[] = ['lincoln', 'noah'];\n"
+                },
+                {
+                    "date": 1649275417349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,10 @@\n numbers.push(5);\n console.log(numbers[2]);\n \n const nomes: string[] = ['lincoln', 'noah'];\n+\n+// 2 - outra sintaxe arrays\n+const nums: Array<number> = [1, 2, 3];\n+nums.push(5);\n+console.log(nums);\n+\n"
+                },
+                {
+                    "date": 1649275587302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,6 @@\n const nums: Array<number> = [1, 2, 3];\n nums.push(5);\n console.log(nums);\n \n+// 3 - tipo any\n+const arr1: any = [1, 'teste', true, [], { nome: 'lincoln' }];\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275607739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,8 @@\n nums.push(5);\n console.log(nums);\n \n // 3 - tipo any\n-const arr1: any = [1, 'teste', true, [], { nome: 'lincoln' }];\n\\ No newline at end of file\n+const arr1: any = [1, 'teste', true, [], { nome: 'lincoln' }];\n+console.log(arr1);\n+console.log(typeof arr1);\n+\n"
+                },
+                {
+                    "date": 1649275652782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n // 3 - tipo any\n const arr1: any = [1, 'teste', true, [], { nome: 'lincoln' }];\n console.log(arr1);\n console.log(typeof arr1);\n-\n+arr1.push([1, 3, 'ruteski']);\n"
+                },
+                {
+                    "date": 1649275683655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,7 @@\n const arr1: any = [1, 'teste', true, [], { nome: 'lincoln' }];\n console.log(arr1);\n console.log(typeof arr1);\n arr1.push([1, 3, 'ruteski']);\n+console.log(arr1);\n+\n+// 4 - tipo de parametro\n"
+                },
+                {
+                    "date": 1649275787210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,4 +17,8 @@\n arr1.push([1, 3, 'ruteski']);\n console.log(arr1);\n \n // 4 - tipo de parametro\n+function soma(a, b) {\n+  console.log(a + b);\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275801864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,7 @@\n arr1.push([1, 3, 'ruteski']);\n console.log(arr1);\n \n // 4 - tipo de parametro\n-function soma(a, b) {\n+function soma(a: number, b: number) {\n   console.log(a + b);\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275816244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,7 @@\n \n // 4 - tipo de parametro\n function soma(a: number, b: number) {\n   console.log(a + b);\n-}\n\\ No newline at end of file\n+}\n+\n+soma(4, 5);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275853951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,12 @@\n function soma(a: number, b: number) {\n   console.log(a + b);\n }\n \n+soma(4, 5);\n+\n+// 5 - tipo de retornos\n+function soma(a: number, b: number) {\n+  console.log(a + b);\n+}\n+\n soma(4, 5);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275860435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n soma(4, 5);\n \n // 5 - tipo de retornos\n-function soma(a: number, b: number) {\n+function soma2(a: number, b: number) {\n   console.log(a + b);\n }\n \n\\ No newline at end of file\n-soma(4, 5);\n+soma2(4, 5);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275911318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n soma(4, 5);\n \n // 5 - tipo de retornos\n-function soma2(a: number, b: number) {\n-  console.log(a + b);\n+function soma2(a: number, b: number): number {\n+  return a + b;\n }\n \n soma2(4, 5);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275945949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,7 @@\n \n soma(4, 5);\n \n // 5 - tipo de retornos\n-function soma2(a: number, b: number): number {\n-  return a + b;\n-}\n-\n-soma2(4, 5);\n\\ No newline at end of file\n+function saudacao(nome: string) {\n+  return `Olá ${nome}`;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275953060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,7 @@\n \n // 5 - tipo de retornos\n function saudacao(nome: string) {\n   return `Olá ${nome}`;\n-}\n\\ No newline at end of file\n+}\n+\n+saudacao('lincoln');\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649275978916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n soma(4, 5);\n \n // 5 - tipo de retornos\n-function saudacao(nome: string) {\n+function saudacao(nome: string): string {\n   return `Olá ${nome}`;\n }\n \n saudacao('lincoln');\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276038673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,5 +28,5 @@\n function saudacao(nome: string): string {\n   return `Olá ${nome}`;\n }\n \n-saudacao('lincoln');\n\\ No newline at end of file\n+console.log(saudacao('lincoln'));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276196788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,5 +28,12 @@\n function saudacao(nome: string): string {\n   return `Olá ${nome}`;\n }\n \n-console.log(saudacao('lincoln'));\n\\ No newline at end of file\n+console.log(saudacao('lincoln'));\n+\n+// 6 - funcoes anonimas\n+setTimeout(function () {\n+  const salario: number = 1500;\n+  //console.log(parseFloat(salario));\n+\n+}, 2000);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276211855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,6 +34,7 @@\n // 6 - funcoes anonimas\n setTimeout(function () {\n   const salario: number = 1500;\n   //console.log(parseFloat(salario));\n+  console.log(salario);\n \n }, 2000);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276249073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n // 6 - funcoes anonimas\n setTimeout(function () {\n   const salario: number = 1500;\n   //console.log(parseFloat(salario));\n-  console.log(salario);\n+  //console.log(salario);\n \n }, 2000);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276266835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,5 +36,7 @@\n   const salario: number = 1500;\n   //console.log(parseFloat(salario));\n   //console.log(salario);\n \n-}, 2000);\n\\ No newline at end of file\n+}, 2000);\n+\n+// 7 - tipos de objetos\n"
+                },
+                {
+                    "date": 1649276456025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,4 +39,9 @@\n \n }, 2000);\n \n // 7 - tipos de objetos\n+function coordenadas(coord: { x: number, y: number }) {\n+  console.log('coordenada x ' + coord.x);\n+  console.log('coordenada y ' + coord.y);\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276487745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,6 +42,8 @@\n // 7 - tipos de objetos\n function coordenadas(coord: { x: number, y: number }) {\n   console.log('coordenada x ' + coord.x);\n   console.log('coordenada y ' + coord.y);\n+}\n \n\\ No newline at end of file\n-}\n+const objCoord = { x: 329, y: 84.2 };\n+\n"
+                },
+                {
+                    "date": 1649276507484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,4 +45,6 @@\n   console.log('coordenada y ' + coord.y);\n }\n \n const objCoord = { x: 329, y: 84.2 };\n+\n+coordenadas(objCoord);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276608093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,5 +46,7 @@\n }\n \n const objCoord = { x: 329, y: 84.2 };\n \n-coordenadas(objCoord);\n\\ No newline at end of file\n+coordenadas(objCoord);\n+\n+const pessoaObj: { nome: string, sobrenome: string } = { nome: 'lincoln', sobrenome: 'ruteski' }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276750982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,5 +48,14 @@\n const objCoord = { x: 329, y: 84.2 };\n \n coordenadas(objCoord);\n \n-const pessoaObj: { nome: string, sobrenome: string } = { nome: 'lincoln', sobrenome: 'ruteski' }\n\\ No newline at end of file\n+const pessoaObj: { nome: string, sobrenome: string } = { nome: 'lincoln', sobrenome: 'ruteski' }\n+\n+// 8 - propriedades opcionais\n+function mostraNumero(a: number, b: number, c: number) {\n+  console.log('a: ' + a);\n+  console.log('b: ' + b);\n+  console.log('c: ' + c);\n+}\n+\n+mostraNumero(1, 2, 3)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276777962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,11 +51,11 @@\n \n const pessoaObj: { nome: string, sobrenome: string } = { nome: 'lincoln', sobrenome: 'ruteski' }\n \n // 8 - propriedades opcionais\n-function mostraNumero(a: number, b: number, c: number) {\n+function mostraNumero(a: number, b: number, c?: number) {\n   console.log('a: ' + a);\n   console.log('b: ' + b);\n   console.log('c: ' + c);\n }\n \n\\ No newline at end of file\n-mostraNumero(1, 2, 3)\n+mostraNumero(1, 2, 3);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276791647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,5 +57,6 @@\n   console.log('b: ' + b);\n   console.log('c: ' + c);\n }\n \n-mostraNumero(1, 2, 3);\n\\ No newline at end of file\n+mostraNumero(1, 2, 3);\n+mostraNumero(7, 5,);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649276820927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n // 8 - propriedades opcionais\n function mostraNumero(a: number, b: number, c?: number) {\n   console.log('a: ' + a);\n   console.log('b: ' + b);\n-  console.log('c: ' + c);\n+  if (c) console.log('c: ' + c);\n }\n \n mostraNumero(1, 2, 3);\n\\ No newline at end of file\n-mostraNumero(7, 5,);\n+mostraNumero(7, 5);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649277131040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,5 +58,10 @@\n   if (c) console.log('c: ' + c);\n }\n \n mostraNumero(1, 2, 3);\n-mostraNumero(7, 5);\n\\ No newline at end of file\n+mostraNumero(7, 5);\n+\n+// 9 - validacao de parametro opcional\n+function saudacaoAvancada(nome: string, sobrenome?: string) {\n+  if (sobrenome !== undefined)\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649277207594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,6 +62,9 @@\n mostraNumero(7, 5);\n \n // 9 - validacao de parametro opcional\n function saudacaoAvancada(nome: string, sobrenome?: string) {\n-  if (sobrenome !== undefined)\n+  if (sobrenome !== undefined) {\n+    console.log(`Olá, ${nome} ${sobrenome}, tudo bem?`);\n+\n+  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649277268301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,8 +63,10 @@\n \n // 9 - validacao de parametro opcional\n function saudacaoAvancada(nome: string, sobrenome?: string) {\n   if (sobrenome !== undefined) {\n-    console.log(`Olá, ${nome} ${sobrenome}, tudo bem?`);\n+    return `Olá, ${nome} ${sobrenome}, tudo bem?`;\n+  }\n \n-  }\n+  console.log(`Olá, ${nome}, tudo bem?`);\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649277292349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,6 +67,8 @@\n     return `Olá, ${nome} ${sobrenome}, tudo bem?`;\n   }\n \n   console.log(`Olá, ${nome}, tudo bem?`);\n+}\n \n\\ No newline at end of file\n-}\n+saudacaoAvancada('lincoln');\n+saudacaoAvancada('lincoln', 'ruteski');\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649277471998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n   if (sobrenome !== undefined) {\n     return `Olá, ${nome} ${sobrenome}, tudo bem?`;\n   }\n \n-  console.log(`Olá, ${nome}, tudo bem?`);\n+  return `Olá, ${nome}, tudo bem?`;\n }\n \n-saudacaoAvancada('lincoln');\n\\ No newline at end of file\n-saudacaoAvancada('lincoln', 'ruteski');\n+console.log(saudacaoAvancada('lincoln'));\n+console.log(saudacaoAvancada('lincoln', 'ruteski'));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649277691857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,5 +70,13 @@\n   return `Olá, ${nome}, tudo bem?`;\n }\n \n console.log(saudacaoAvancada('lincoln'));\n-console.log(saudacaoAvancada('lincoln', 'ruteski'));\n\\ No newline at end of file\n+console.log(saudacaoAvancada('lincoln', 'ruteski'));\n+\n+// 10 - union typeof\n+function mostrarSaldo(saldo: number | string) {\n+  console.log(`O saldo da conta é R$ ${saldo}`);\n+}\n+\n+mostrarSaldo(100);\n+mostrarSaldo('500');\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649277751729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,5 +78,9 @@\n   console.log(`O saldo da conta é R$ ${saldo}`);\n }\n \n mostrarSaldo(100);\n-mostrarSaldo('500');\n\\ No newline at end of file\n+mostrarSaldo('500');\n+\n+const arr2: Array<number | string> = [100, 'teste'];\n+\n+// 11 - avancando em union type\n"
+                },
+                {
+                    "date": 1649277784312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,7 +80,7 @@\n \n mostrarSaldo(100);\n mostrarSaldo('500');\n \n-const arr2: Array<number | string> = [100, 'teste'];\n+const arr2: Array<number | string | boolean> = [100, 'teste', true, 'teste2', false, true, 15263];\n \n // 11 - avancando em union type\n"
+                },
+                {
+                    "date": 1649277797177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,7 +80,9 @@\n \n mostrarSaldo(100);\n mostrarSaldo('500');\n \n-const arr2: Array<number | string | boolean> = [100, 'teste', true, 'teste2', false, true, 15263];\n+const arr2: Array<number | string | boolean> = [100, 'teste', true, 'teste2', false, true, 15.263];\n+console.log(arr2);;\n \n+\n // 11 - avancando em union type\n"
+                },
+                {
+                    "date": 1649277827434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n \n mostrarSaldo(100);\n mostrarSaldo('500');\n \n-const arr2: Array<number | string | boolean> = [100, 'teste', true, 'teste2', false, true, 15.263];\n+const arr2: Array<number | string | boolean | number[]> = [100, 'teste', true, 'teste2', false, true, 15.263, [1, 6, 8, 63.69, 8.658]];\n console.log(arr2);;\n \n \n // 11 - avancando em union type\n"
+                },
+                {
+                    "date": 1649277989198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,4 +85,11 @@\n console.log(arr2);;\n \n \n // 11 - avancando em union type\n+function showUserRole(role: boolean | string) {\n+  if (typeof role === \"boolean\") {\n+    return 'usuario nao aprovado';\n+  }\n+\n+  return `a funcao do usuario é: ${role}`;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649278017055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,5 +91,8 @@\n     return 'usuario nao aprovado';\n   }\n \n   return `a funcao do usuario é: ${role}`;\n-}\n\\ No newline at end of file\n+}\n+\n+console.log(showUserRole(false));\n+console.log(showUserRole('admin'));\n"
+                },
+                {
+                    "date": 1649278181875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,4 +95,10 @@\n }\n \n console.log(showUserRole(false));\n console.log(showUserRole('admin'));\n+\n+// 12 - type alias\n+function showId(id: number | string) {\n+  console.log(`o id é ${id}`);;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649278204714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,7 +98,9 @@\n console.log(showUserRole('admin'));\n \n // 12 - type alias\n function showId(id: number | string) {\n-  console.log(`o id é ${id}`);;\n+  console.log(`o id é ${id}`);\n+}\n\\ No newline at end of file\n \n-}\n+showId(1);\n+showId('200');\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649278350746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,9 +97,12 @@\n console.log(showUserRole(false));\n console.log(showUserRole('admin'));\n \n // 12 - type alias\n-function showId(id: number | string) {\n+type ID = string | number;\n+\n+//function showId(id: number | string) {\n+function showId(id: ID) {\n   console.log(`o id é ${id}`);\n }\n \n showId(1);\n"
+                },
+                {
+                    "date": 1649278487687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,5 +105,12 @@\n   console.log(`o id é ${id}`);\n }\n \n showId(1);\n-showId('200');\n\\ No newline at end of file\n+showId('200');\n+\n+// 13 - introducao a interfaces\n+interface Point {\n+  x: number;\n+  y: number;\n+  z: number;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649278621948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,5 +112,9 @@\n interface Point {\n   x: number;\n   y: number;\n   z: number;\n-}\n\\ No newline at end of file\n+}\n+\n+function showCoords(coord: Point) {\n+  console.log(`x: ${coord.x} y: ${coord.y} x: ${coord.z}`);\n+}\n"
+                },
+                {
+                    "date": 1649278707438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,4 +117,12 @@\n \n function showCoords(coord: Point) {\n   console.log(`x: ${coord.x} y: ${coord.y} x: ${coord.z}`);\n }\n+\n+const coordObj: Point = {\n+  x: 25,\n+  y: 32,\n+  z: 45.6\n+}\n+\n+showCoords(coordObj);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649278716798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n   z: number;\n }\n \n function showCoords(coord: Point) {\n-  console.log(`x: ${coord.x} y: ${coord.y} x: ${coord.z}`);\n+  console.log(`x: ${coord.x} y: ${coord.y} z: ${coord.z}`);\n }\n \n const coordObj: Point = {\n   x: 25,\n"
+                },
+                {
+                    "date": 1649278954712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,5 +124,14 @@\n   y: 32,\n   z: 45.6\n }\n \n-showCoords(coordObj);\n\\ No newline at end of file\n+showCoords(coordObj);\n+\n+// 14 - type alias X interfaces\n+interface IPerson {\n+  name: string;\n+}\n+\n+interface IPerson {\n+  age: number;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649279006492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,5 +133,10 @@\n }\n \n interface IPerson {\n   age: number;\n+}\n+\n+const somePerson: IPerson = {\n+  name: 'lincoln',\n+  age: 38,\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649279034141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,5 +138,7 @@\n \n const somePerson: IPerson = {\n   name: 'lincoln',\n   age: 38,\n-}\n\\ No newline at end of file\n+}\n+\n+console.log(somePerson);\n"
+                },
+                {
+                    "date": 1649279115307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -141,4 +141,12 @@\n   age: 38,\n }\n \n console.log(somePerson);\n+\n+type IPerson = {\n+  name: string;\n+}\n+\n+type IPerson = {\n+  age: number;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649279122168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,7 +146,7 @@\n type IPerson = {\n   name: string;\n }\n \n-type IPerson = {\n-  age: number;\n-}\n\\ No newline at end of file\n+// type IPerson = {\n+//   age: number;\n+// }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649279139614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -142,11 +142,12 @@\n }\n \n console.log(somePerson);\n \n-type IPerson = {\n+type IPersonType = {\n   name: string;\n }\n \n-// type IPerson = {\n+// type IPersonType = {\n\\ No newline at end of file\n //   age: number;\n-// }\n+// }\n+\n"
+                },
+                {
+                    "date": 1649279396181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,5 +148,17 @@\n }\n \n // type IPersonType = {\n //   age: number;\n-// }\n\\ No newline at end of file\n+// }\n+\n+\n+// 15 - literal types\n+let test: 'testando';\n+test = 'testando';\n+\n+console.log(test);\n+\n+function showDirection(direction: 'left' | 'rigth' | 'center') {\n+  console.log(direction);\n+}\n+\n"
+                },
+                {
+                    "date": 1649279421665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,7 +158,7 @@\n \n console.log(test);\n \n function showDirection(direction: 'left' | 'rigth' | 'center') {\n-  console.log(direction);\n+  console.log(`a direcao é ${direction}`);\n }\n \n"
+                },
+                {
+                    "date": 1649279449058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,4 +161,5 @@\n function showDirection(direction: 'left' | 'rigth' | 'center') {\n   console.log(`a direcao é ${direction}`);\n }\n \n+showDirection('left');\n"
+                },
+                {
+                    "date": 1649279544513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -162,4 +162,6 @@\n   console.log(`a direcao é ${direction}`);\n }\n \n showDirection('left');\n+\n+// 16 - non-null assertion opertaor\n"
+                },
+                {
+                    "date": 1649279618744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,4 +164,6 @@\n \n showDirection('left');\n \n // 16 - non-null assertion opertaor\n+const p = document.getElementById('some-p');\n+console.log(p?.innerText);\n"
+                },
+                {
+                    "date": 1649279644370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -165,5 +165,5 @@\n showDirection('left');\n \n // 16 - non-null assertion opertaor\n const p = document.getElementById('some-p');\n-console.log(p?.innerText);\n+console.log(p!.innerText);\n"
+                },
+                {
+                    "date": 1649279674222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -166,4 +166,6 @@\n \n // 16 - non-null assertion opertaor\n const p = document.getElementById('some-p');\n console.log(p!.innerText);\n+\n+// 17 - bigint\n"
+                },
+                {
+                    "date": 1649279755718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -168,4 +168,7 @@\n const p = document.getElementById('some-p');\n console.log(p!.innerText);\n \n // 17 - bigint\n+let n: bigint;\n+\n+n = 100n;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649279826875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -170,5 +170,6 @@\n \n // 17 - bigint\n let n: bigint;\n \n-n = 100n;\n\\ No newline at end of file\n+n = 100n;\n+console.log(n);\n"
+                },
+                {
+                    "date": 1649279840826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,4 +172,5 @@\n let n: bigint;\n \n n = 100n;\n console.log(n);\n+console.log(typeof n);\n"
+                },
+                {
+                    "date": 1649279979007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -173,4 +173,9 @@\n \n n = 100n;\n console.log(n);\n console.log(typeof n);\n+\n+\n+// 18 - symbol\n+let symbolA: symbol = Symbol('a');\n+let symbolB = Symbol('a');\n"
+                },
+                {
+                    "date": 1649280004131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,4 +178,5 @@\n \n // 18 - symbol\n let symbolA: symbol = Symbol('a');\n let symbolB = Symbol('a');\n+console.log(symbolA == symbolB);\n"
+                },
+                {
+                    "date": 1649280019467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,4 +179,5 @@\n // 18 - symbol\n let symbolA: symbol = Symbol('a');\n let symbolB = Symbol('a');\n console.log(symbolA == symbolB);\n+console.log(symbolA === symbolB);\n"
+                }
+            ],
+            "date": 1649275154789,
+            "name": "Commit-0",
+            "content": "// 1 - arrays\nlet numbers: number[] = [1, 2, 3];\nnumbers.push(5);\n\n"
+        }
+    ]
+}
