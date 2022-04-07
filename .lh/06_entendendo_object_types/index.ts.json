@@ -1,0 +1,218 @@
+{
+    "sourceFile": "06_entendendo_object_types/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 50,
+            "patches": [
+                {
+                    "date": 1649349007941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649349140110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+// 1 - interface com parametro\r\n"
+                },
+                {
+                    "date": 1649349255334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-// 1 - interface com parametro\r\n+// 1 - tipo de objeto para funcao com interface\r\n+\r\n"
+                },
+                {
+                    "date": 1649349311736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,6 @@\n // 1 - tipo de objeto para funcao com interface\r\n-\r\n+interface IProduct {\r\n+  name: string;\r\n+  price: number;\r\n+  isAvailable: boolean;\r\n+}\r\n"
+                },
+                {
+                    "date": 1649349458322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,15 @@\n   name: string;\r\n   price: number;\r\n   isAvailable: boolean;\r\n }\r\n+\r\n+function showProductDetails(product: IProduct): void {\r\n+  console.log(`o nome do produto é ${product.name} e seu preco é R$${product.price}`);\r\n+\r\n+  if (product.isAvailable) {\r\n+    console.log('o produto esta disponivel');\r\n+\r\n+  }\r\n+\r\n+\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649349496224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n   console.log(`o nome do produto é ${product.name} e seu preco é R$${product.price}`);\r\n \r\n   if (product.isAvailable) {\r\n     console.log('o produto esta disponivel');\r\n-\r\n   }\r\n+}\r\n \r\n+const product = new Product({ name: 'camiseta', price: 14.55, isAvailable: true });\r\n\\ No newline at end of file\n \r\n-}\n+showProductDetails\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649349522773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n     console.log('o produto esta disponivel');\r\n   }\r\n }\r\n \r\n-const product = new Product({ name: 'camiseta', price: 14.55, isAvailable: true });\r\n+const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n \r\n showProductDetails\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649349529672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,5 @@\n }\r\n \r\n const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n \r\n-showProductDetails\n\\ No newline at end of file\n+showProductDetails(product);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649349607352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,9 @@\n     console.log('o produto esta disponivel');\r\n   }\r\n }\r\n \r\n-const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n+//const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n \r\n+const shirt: IProduct { name: 'camiseta', price: 14.55, isAvailable: true };\r\n+\r\n showProductDetails(product);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649349660595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,11 @@\n }\r\n \r\n //const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n \r\n-const shirt: IProduct { name: 'camiseta', price: 14.55, isAvailable: true };\r\n+const shirt: IProduct = {\r\n+  name: 'camiseta',\r\n+  price: 14.55,\r\n+  isAvailable: true,\r\n+};\r\n \r\n showProductDetails(product);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649349678130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,14 @@\n     console.log('o produto esta disponivel');\r\n   }\r\n }\r\n \r\n-//const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n+const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n \r\n const shirt: IProduct = {\r\n   name: 'camiseta',\r\n   price: 14.55,\r\n   isAvailable: true,\r\n };\r\n \r\n\\ No newline at end of file\n-showProductDetails(product);\n+showProductDetails(product);\r\n+showProductDetails(shirt);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649349690225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     console.log('o produto esta disponivel');\r\n   }\r\n }\r\n \r\n-const product = { name: 'camiseta', price: 14.55, isAvailable: true };\r\n+const product = { name: 'calcao', price: 214.55, isAvailable: true };\r\n \r\n const shirt: IProduct = {\r\n   name: 'camiseta',\r\n   price: 14.55,\r\n"
+                },
+                {
+                    "date": 1649349721024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,7 @@\n   isAvailable: true,\r\n };\r\n \r\n showProductDetails(product);\r\n-showProductDetails(shirt);\n\\ No newline at end of file\n+showProductDetails(shirt);\r\n+\r\n+// 2 - interface com parametro opcional\r\n"
+                },
+                {
+                    "date": 1649349733745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \r\n const shirt: IProduct = {\r\n   name: 'camiseta',\r\n   price: 14.55,\r\n-  isAvailable: true,\r\n+  isAvailable: false,\r\n };\r\n \r\n showProductDetails(product);\r\n showProductDetails(shirt);\r\n"
+                },
+                {
+                    "date": 1649349816831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,11 @@\n \r\n showProductDetails(product);\r\n showProductDetails(shirt);\r\n \r\n+\r\n // 2 - interface com parametro opcional\r\n+interface IUser {\r\n+  email: string;\r\n+  role?: string\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649349908764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,16 @@\n \r\n \r\n // 2 - interface com parametro opcional\r\n interface IUser {\r\n-  email: string;\r\n+  email: string,\r\n   role?: string\r\n }\r\n \r\n+function showUserDetails(user: IUser) {\r\n+  console.log(`o usuario tem o email ${user.email}`);\r\n+\r\n+  if (user.role) {\r\n+    console.log(`a funcao do usuario é ${user.role}`);\r\n+  }\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649349978782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,4 +38,13 @@\n     console.log(`a funcao do usuario é ${user.role}`);\r\n   }\r\n }\r\n \r\n+const usuario: IUser = {\r\n+  email: 'email@email.com'\r\n+}\r\n+\r\n+const usuarioRole: IUser = {\r\n+  email: 'emails123@asdf.com',\r\n+  role: 'assistente'\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649350000660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,4 +47,6 @@\n   email: 'emails123@asdf.com',\r\n   role: 'assistente'\r\n }\r\n \r\n+showUserDetails(usuario)\r\n+showUserDetails(usuarioRole)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649350022265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n }\r\n \r\n const usuarioRole: IUser = {\r\n   email: 'emails123@asdf.com',\r\n-  role: 'assistente'\r\n+  role: 'admin'\r\n }\r\n \r\n showUserDetails(usuario)\r\n showUserDetails(usuarioRole)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649350048515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,5 +48,8 @@\n   role: 'admin'\r\n }\r\n \r\n showUserDetails(usuario)\r\n-showUserDetails(usuarioRole)\n\\ No newline at end of file\n+showUserDetails(usuarioRole)\r\n+\r\n+\r\n+// 3 - propriedade readonly\r\n"
+                },
+                {
+                    "date": 1649350157206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,4 +52,15 @@\n showUserDetails(usuarioRole)\r\n \r\n \r\n // 3 - propriedade readonly\r\n+interface ICar {\r\n+  brand: string\r\n+  readonly wheels: number\r\n+}\r\n+\r\n+const fusca: ICar = {\r\n+  brand: 'vw',\r\n+  wheels: 4\r\n+}\r\n+\r\n+console.log(fusca);\r\n"
+                },
+                {
+                    "date": 1649350185813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,4 +63,7 @@\n   wheels: 4\r\n }\r\n \r\n console.log(fusca);\r\n+\r\n+\r\n+// 4 - index signature\r\n"
+                },
+                {
+                    "date": 1649350315389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,4 +66,11 @@\n console.log(fusca);\r\n \r\n \r\n // 4 - index signature\r\n+interface ICoordObject {\r\n+  [index: string]: number\r\n+}\r\n+\r\n+let coords: ICoordObject = {\r\n+  x: 10\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649350348204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,5 +72,9 @@\n }\r\n \r\n let coords: ICoordObject = {\r\n   x: 10\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+coords.y = 15\r\n+\r\n+console.log(coords);\r\n"
+                },
+                {
+                    "date": 1649350393880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,4 +77,7 @@\n \r\n coords.y = 15\r\n \r\n console.log(coords);\r\n+\r\n+\r\n+// 5 - heranca de interfaces\r\n"
+                },
+                {
+                    "date": 1649350483409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,4 +80,12 @@\n console.log(coords);\r\n \r\n \r\n // 5 - heranca de interfaces\r\n+interface IHuman {\r\n+  name: string;\r\n+  age: number\r\n+}\r\n+\r\n+interface ISuperHuman extends IHuman {\r\n+  superpowers: string[]\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649350597224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,5 +87,16 @@\n }\r\n \r\n interface ISuperHuman extends IHuman {\r\n   superpowers: string[]\r\n+}\r\n+\r\n+const h: IHuman = {\r\n+  name: 'noah',\r\n+  age: 3\r\n+}\r\n+\r\n+const sh: ISuperHuman = {\r\n+  name: 'lincoln',\r\n+  age: 38,\r\n+  superpowers: ['força', 'visao', 'teletransporte', 'kamehameha']\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649350615081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,16 @@\n   name: 'noah',\r\n   age: 3\r\n }\r\n \r\n+console.log(h);\r\n+\r\n+\r\n const sh: ISuperHuman = {\r\n   name: 'lincoln',\r\n\\ No newline at end of file\n   age: 38,\r\n   superpowers: ['força', 'visao', 'teletransporte', 'kamehameha']\r\n-}\n+}\r\n+\r\n+console.log(sh);\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1649350673148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,11 +98,13 @@\n console.log(h);\r\n \r\n \r\n const sh: ISuperHuman = {\r\n-  name: 'lincoln',\r\n-  age: 38,\r\n-  superpowers: ['força', 'visao', 'teletransporte', 'kamehameha']\r\n+  name: 'goku',\r\n+  age: 50,\r\n+  superpowers: ['gimki dama', 'teletransporte', 'kamehameha']\r\n }\r\n \r\n console.log(sh);\r\n+console.log(sh.superpowers[2]);\r\n \r\n+\r\n"
+                },
+                {
+                    "date": 1649350689352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,10 +90,10 @@\n   superpowers: string[]\r\n }\r\n \r\n const h: IHuman = {\r\n-  name: 'noah',\r\n-  age: 3\r\n+  name: 'lincoln',\r\n+  age: 38\r\n }\r\n \r\n console.log(h);\r\n \r\n"
+                },
+                {
+                    "date": 1649350706551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,4 +107,5 @@\n console.log(sh);\r\n console.log(sh.superpowers[2]);\r\n \r\n \r\n+// 6 - intersection types\r\n"
+                },
+                {
+                    "date": 1649350718798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n \r\n const sh: ISuperHuman = {\r\n   name: 'goku',\r\n   age: 50,\r\n-  superpowers: ['gimki dama', 'teletransporte', 'kamehameha']\r\n+  superpowers: ['gemki dama', 'teletransporte', 'kamehameha']\r\n }\r\n \r\n console.log(sh);\r\n console.log(sh.superpowers[2]);\r\n"
+                },
+                {
+                    "date": 1649351190879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,4 +108,14 @@\n console.log(sh.superpowers[2]);\r\n \r\n \r\n // 6 - intersection types\r\n+interface ICharacter {\r\n+  name: string\r\n+}\r\n+\r\n+interface IGun {\r\n+  type: string\r\n+  calibre: number\r\n+}\r\n+\r\n+type THumanWithGun = ICharacter & IGun\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649351257196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,5 +117,13 @@\n   type: string\r\n   calibre: number\r\n }\r\n \r\n-type THumanWithGun = ICharacter & IGun\n\\ No newline at end of file\n+type THumanWithGun = ICharacter & IGun\r\n+\r\n+const arnold: THumanWithGun = {\r\n+  name: 'arnold',\r\n+  type: 'shotgun',\r\n+  calibre: 12\r\n+}\r\n+\r\n+console.log(arnold);\r\n"
+                },
+                {
+                    "date": 1649351529783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n \r\n const sh: ISuperHuman = {\r\n   name: 'goku',\r\n   age: 50,\r\n-  superpowers: ['gemki dama', 'teletransporte', 'kamehameha']\r\n+  superpowers: ['genki dama', 'teletransporte', 'kamehameha']\r\n }\r\n \r\n console.log(sh);\r\n console.log(sh.superpowers[2]);\r\n@@ -126,4 +126,5 @@\n   calibre: 12\r\n }\r\n \r\n console.log(arnold);\r\n+console.log(arnold.type);\r\n"
+                },
+                {
+                    "date": 1649351551450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,4 +127,7 @@\n }\r\n \r\n console.log(arnold);\r\n console.log(arnold.type);\r\n+\r\n+\r\n+// 7 - array readonly\r\n"
+                },
+                {
+                    "date": 1649351664128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,4 +130,8 @@\n console.log(arnold.type);\r\n \r\n \r\n // 7 - array readonly\r\n+let myArray = ['maca', 'laranja', 'banana']\r\n+myArray[3] = 'mamao'\r\n+console.log(myArray);\r\n+\r\n"
+                },
+                {
+                    "date": 1649351709945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,8 +130,8 @@\n console.log(arnold.type);\r\n \r\n \r\n // 7 - array readonly\r\n-let myArray = ['maca', 'laranja', 'banana']\r\n-myArray[3] = 'mamao'\r\n+let myArray: ReadonlyArray<string> = ['maca', 'laranja', 'banana']\r\n+//myArray[3] = 'mamao'\r\n console.log(myArray);\r\n \r\n"
+                },
+                {
+                    "date": 1649351769160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,4 +134,11 @@\n let myArray: ReadonlyArray<string> = ['maca', 'laranja', 'banana']\r\n //myArray[3] = 'mamao'\r\n console.log(myArray);\r\n \r\n+myArray.forEach(item => {\r\n+  console.log(`fruta ${item}`);\r\n+});\r\n+\r\n+\r\n+// 8 - tuplas\r\n+\r\n"
+                },
+                {
+                    "date": 1649351791424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n //myArray[3] = 'mamao'\r\n console.log(myArray);\r\n \r\n myArray.forEach(item => {\r\n-  console.log(`fruta ${item}`);\r\n+  console.log(`fruta: ${item}`);\r\n });\r\n \r\n \r\n // 8 - tuplas\r\n"
+                },
+                {
+                    "date": 1649351862130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,7 +138,13 @@\n myArray.forEach(item => {\r\n   console.log(`fruta: ${item}`);\r\n });\r\n \r\n+myArray = myArray.map((item) => {\r\n+  return `fruta: ${item}`\r\n+})\r\n \r\n+console.log(myArray);\r\n+\r\n+\r\n // 8 - tuplas\r\n \r\n"
+                },
+                {
+                    "date": 1649352053035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,5 +146,5 @@\n console.log(myArray);\r\n \r\n \r\n // 8 - tuplas\r\n-\r\n+type fiveNumbers = [number, number, number, number, number]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649352116218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,5 +146,7 @@\n console.log(myArray);\r\n \r\n \r\n // 8 - tuplas\r\n-type fiveNumbers = [number, number, number, number, number]\n\\ No newline at end of file\n+type TFiveNumbers = [number, number, number, number, number]\r\n+\r\n+const myNumberArray: IFiveNumbers = [1, 2, 3, 4, 5]\r\n"
+                },
+                {
+                    "date": 1649352178308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,5 +148,6 @@\n \r\n // 8 - tuplas\r\n type TFiveNumbers = [number, number, number, number, number]\r\n \r\n-const myNumberArray: IFiveNumbers = [1, 2, 3, 4, 5]\r\n+const myNumberArray: TFiveNumbers = [1, 2, 3, 4, 5]\r\n+//const myNumberArray2: TFiveNumbers = [1, 2, 3, 4, 5, 6]\r\n"
+                },
+                {
+                    "date": 1649352246778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,4 +150,11 @@\n type TFiveNumbers = [number, number, number, number, number]\r\n \r\n const myNumberArray: TFiveNumbers = [1, 2, 3, 4, 5]\r\n //const myNumberArray2: TFiveNumbers = [1, 2, 3, 4, 5, 6]\r\n+\r\n+type TNameAndAge = [string, number]\r\n+\r\n+const anotherUser = ['lincoln', 30]\r\n+\r\n+\r\n+// 9 - tuplas com readonly\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649352253133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -155,6 +155,9 @@\n type TNameAndAge = [string, number]\r\n \r\n const anotherUser = ['lincoln', 30]\r\n \r\n+console.log(anotherUser);\r\n \r\n+\r\n+\r\n // 9 - tuplas com readonly\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649352279642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n //const myNumberArray2: TFiveNumbers = [1, 2, 3, 4, 5, 6]\r\n \r\n type TNameAndAge = [string, number]\r\n \r\n-const anotherUser = ['lincoln', 30]\r\n+const anotherUser: TnameAndAge = ['lincoln', 30]\r\n \r\n console.log(anotherUser);\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1649352322442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,11 +153,14 @@\n //const myNumberArray2: TFiveNumbers = [1, 2, 3, 4, 5, 6]\r\n \r\n type TNameAndAge = [string, number]\r\n \r\n-const anotherUser: TnameAndAge = ['lincoln', 30]\r\n+const anotherUser: TNameAndAge = ['lincoln', 30]\r\n+console.log(anotherUser);\r\n \r\n+anotherUser[0] = 'noah'\r\n console.log(anotherUser);\r\n \r\n \r\n \r\n+\r\n // 9 - tuplas com readonly\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649352514100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,7 +160,9 @@\n anotherUser[0] = 'noah'\r\n console.log(anotherUser);\r\n \r\n \r\n-\r\n-\r\n-// 9 - tuplas com readonly\n\\ No newline at end of file\n+// 9 - tuplas com readonly\r\n+function showNumbers(numbers: readonly [number, number]) {\r\n+  console.log(numbers[0]);\r\n+  console.log(numbers[1]);\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649352524884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,5 +164,7 @@\n // 9 - tuplas com readonly\r\n function showNumbers(numbers: readonly [number, number]) {\r\n   console.log(numbers[0]);\r\n   console.log(numbers[1]);\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+showNumbers([1, 2])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649352555985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -162,8 +162,9 @@\n \r\n \r\n // 9 - tuplas com readonly\r\n function showNumbers(numbers: readonly [number, number]) {\r\n+  //numbers[0] = 10\r\n   console.log(numbers[0]);\r\n   console.log(numbers[1]);\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1649349007941,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}
