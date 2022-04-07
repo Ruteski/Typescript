@@ -1,0 +1,18 @@
+{
+    "sourceFile": "09_modulos/mytype.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1649366594942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1649366594942,
+            "name": "Commit-0",
+            "content": "export interface Human { name: string, age: number }"
+        }
+    ]
+}

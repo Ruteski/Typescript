@@ -1,0 +1,26 @@
+{
+    "sourceFile": "09_modulos/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1649365949557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649366262192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+// 1 - importacao de arquivos\r\n+import importGreet from './greet.js';\r\n+\r\n+importGreet();\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649366597638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,45 @@\n-// 1 - importacao de arquivos\r\n-import importGreet from './greet.js';\r\n-\r\n-importGreet();\n\\ No newline at end of file\n+// 1 - importação de arquivos\n+import importGreet from './greet.js'\n+\n+importGreet()\n+\n+// 2 - import de variavel\n+import { x } from './variable.js'\n+\n+console.log(x)\n+\n+// 3 - multiplas exportacoes\n+import { a, b, myExportFunction } from './multiple'\n+\n+console.log(a)\n+console.log(b)\n+\n+myExportFunction()\n+\n+// 4 - alias\n+import { someName as otherName } from './changename.js'\n+\n+console.log(otherName)\n+\n+// 5 - import all\n+import * as myNumbers from './numbers.js'\n+\n+console.log(myNumbers)\n+console.log(myNumbers.n1)\n+\n+// 6 - importando tipos\n+import { Human } from './mytype.js'\n+\n+class User implements Human {\n+    name\n+    age\n+\n+    constructor(name: string, age: number) {\n+        this.name = name\n+        this.age = age\n+    }\n+}\n+\n+const joao = new User(\"João\", 25)\n+\n+console.log(joao)\n"
+                }
+            ],
+            "date": 1649365949557,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}
