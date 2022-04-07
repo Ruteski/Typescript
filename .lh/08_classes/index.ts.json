@@ -1,0 +1,286 @@
+{
+    "sourceFile": "08_classes/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 67,
+            "patches": [
+                {
+                    "date": 1649360253790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649360343090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+// 1 - campos em classe\r\n+class User {\r\n+  name!: string;\r\n+  age!: number;\r\n+}\r\n+\r\n+const lincoln = new User();\r\n+console.log(lincoln);\r\n"
+                },
+                {
+                    "date": 1649360403092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,6 @@\n }\r\n \r\n const lincoln = new User();\r\n console.log(lincoln);\r\n+lincoln.name = 'lincoln';\r\n+console.log(lincoln);\r\n"
+                },
+                {
+                    "date": 1649360521860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,19 @@\n const lincoln = new User();\r\n console.log(lincoln);\r\n lincoln.name = 'lincoln';\r\n console.log(lincoln);\r\n+\r\n+\r\n+// 2 - constructor\r\n+class NewUser {\r\n+  name\r\n+  age\r\n+\r\n+  constructor(name: string, age: number) {\r\n+    this.name = name;\r\n+    this.age = age;\r\n+  }\r\n+}\r\n+\r\n+const newUser = new NewUser('lincoln', 38);\r\n+console.log(newUser);\r\n"
+                },
+                {
+                    "date": 1649360663465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,4 +22,19 @@\n }\r\n \r\n const newUser = new NewUser('lincoln', 38);\r\n console.log(newUser);\r\n+\r\n+\r\n+// 3 - propriedades readonly\r\n+class Car {\r\n+  name\r\n+  readonly wheels = 4\r\n+\r\n+  constructor(name: string) {\r\n+    this.name = name;\r\n+  }\r\n+}\r\n+\r\n+const fusca = new Car('fusca');\r\n+console.log(fusca);\r\n+\r\n"
+                },
+                {
+                    "date": 1649360946264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,4 +37,28 @@\n \r\n const fusca = new Car('fusca');\r\n console.log(fusca);\r\n \r\n+\r\n+// 4 - herança e super \r\n+\r\n+class Machine {\r\n+  name: string\r\n+\r\n+  constructor(name: string) {\r\n+    this.name = name;\r\n+  }\r\n+}\r\n+\r\n+const trator = new Machine('trator');\r\n+\r\n+class KillerMachine extends Machine {\r\n+  guns: number\r\n+\r\n+  constructor(name: string, guns: number) {\r\n+    super(name)\r\n+    this.guns = guns\r\n+  }\r\n+}\r\n+\r\n+const destroyer = new KillerMachine('destroyer', 5);\r\n+console.log(destroyer);\r\n"
+                },
+                {
+                    "date": 1649360955047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,5 +60,6 @@\n   }\r\n }\r\n \r\n const destroyer = new KillerMachine('destroyer', 5);\r\n+console.log(trator);\r\n console.log(destroyer);\r\n"
+                },
+                {
+                    "date": 1649361158701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,4 +62,19 @@\n \r\n const destroyer = new KillerMachine('destroyer', 5);\r\n console.log(trator);\r\n console.log(destroyer);\r\n+\r\n+\r\n+// 5 - metodos\r\n+class Dwarf {\r\n+  name: string\r\n+\r\n+  constructor(name: string) {\r\n+    this.name = name;\r\n+  }\r\n+\r\n+  greeting() {\r\n+    console.log('hey stranger!');\r\n+\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649361214156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,5 +76,9 @@\n   greeting() {\r\n     console.log('hey stranger!');\r\n \r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+const anao = new Dwarf('jimmy');\r\n+console.log(anao.name);\r\n+anao.greeting();\r\n"
+                },
+                {
+                    "date": 1649361240323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,4 +81,8 @@\n \r\n const anao = new Dwarf('jimmy');\r\n console.log(anao.name);\r\n anao.greeting();\r\n+console.log(anao);\r\n+\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1649361545325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,5 +84,21 @@\n anao.greeting();\r\n console.log(anao);\r\n \r\n \r\n+// 6 - this\r\n+class Truck {\r\n+  model\r\n+  hp\r\n \r\n+  constructor(model: string, hp: number) {\r\n+    this.model = model\r\n+    this.hp = hp\r\n+  }\r\n+\r\n+  showDetails() {\r\n+    console.log(`caminhao do modelo: ${this.model}, que tem ${this.hp} cavalos de potencia`);\r\n+\r\n+  }\r\n+}\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1649361628465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,5 +100,11 @@\n \r\n   }\r\n }\r\n \r\n+const caminhao = new Truck('volvo', 460)\r\n \r\n+caminhao.showDetails();\r\n+\r\n+\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1649361931540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,6 +105,22 @@\n \r\n caminhao.showDetails();\r\n \r\n \r\n+// 7 - getters\r\n+class Person {\r\n+  name: string\r\n+  surname: string\r\n \r\n+  constructor(name: string, surname: string) {\r\n+    this.name = name;\r\n+    this.surname = surname;\r\n+  }\r\n \r\n+  get fullName(): string {\r\n+    return this.name + ' ' + this.surname\r\n+  }\r\n+}\r\n+\r\n+const pessoa = new Person('lincoln', 'ruteski')\r\n+console.log(pessoa.name);\r\n+console.log(pessoa.fullName);\r\n"
+                },
+                {
+                    "date": 1649362088036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,4 +123,21 @@\n \r\n const pessoa = new Person('lincoln', 'ruteski')\r\n console.log(pessoa.name);\r\n console.log(pessoa.fullName);\r\n+\r\n+\r\n+// 8 - setters\r\n+class Coords {\r\n+  x!: number\r\n+  y!: number\r\n+\r\n+  set fillX(x: number) {\r\n+    if (x === 0) {\r\n+      return\r\n+    }\r\n+\r\n+    this.x = x\r\n+\r\n+    console.log('x inserido com sucesso');\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649362123362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -139,5 +139,16 @@\n     this.x = x\r\n \r\n     console.log('x inserido com sucesso');\r\n   }\r\n-}\n\\ No newline at end of file\n+\r\n+  set fillY(y: number) {\r\n+    if (y === 0) {\r\n+      return\r\n+    }\r\n+\r\n+    this.y = y\r\n+\r\n+    console.log('y inserido com sucesso');\r\n+  }\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649362203463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,4 +151,11 @@\n     console.log('y inserido com sucesso');\r\n   }\r\n }\r\n \r\n+const myCoords = new Coords()\r\n+\r\n+myCoords.fillX = 15\r\n+myCoords.fillY = 0\r\n+\r\n+console.log(myCoords);\r\n+\r\n"
+                },
+                {
+                    "date": 1649362232188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,8 +154,8 @@\n \r\n const myCoords = new Coords()\r\n \r\n myCoords.fillX = 15\r\n-myCoords.fillY = 0\r\n+myCoords.fillY = 10\r\n \r\n console.log(myCoords);\r\n \r\n"
+                },
+                {
+                    "date": 1649362288282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -149,8 +149,12 @@\n     this.y = y\r\n \r\n     console.log('y inserido com sucesso');\r\n   }\r\n+\r\n+  get getCoords(): string {\r\n+    return `X: ${this.x} Y: ${this.y}`\r\n+  }\r\n }\r\n \r\n const myCoords = new Coords()\r\n \r\n"
+                },
+                {
+                    "date": 1649362315103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,5 +161,6 @@\n myCoords.fillX = 15\r\n myCoords.fillY = 10\r\n \r\n console.log(myCoords);\r\n+console.log(myCoords.getCoords);\r\n \r\n"
+                },
+                {
+                    "date": 1649362346338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,10 +127,10 @@\n \r\n \r\n // 8 - setters\r\n class Coords {\r\n-  x!: number\r\n-  y!: number\r\n+  private x!: number\r\n+  private y!: number\r\n \r\n   set fillX(x: number) {\r\n     if (x === 0) {\r\n       return\r\n"
+                },
+                {
+                    "date": 1649362359617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,10 +127,10 @@\n \r\n \r\n // 8 - setters\r\n class Coords {\r\n-  private x!: number\r\n-  private y!: number\r\n+  x!: number\r\n+  y!: number\r\n \r\n   set fillX(x: number) {\r\n     if (x === 0) {\r\n       return\r\n"
+                },
+                {
+                    "date": 1649362654428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,4 +163,21 @@\n \r\n console.log(myCoords);\r\n console.log(myCoords.getCoords);\r\n \r\n+\r\n+// 9 - herdando interfaces - implements\r\n+interface showTitle {\r\n+  itemTitle(): string\r\n+}\r\n+\r\n+class blogPost implements showTitle {\r\n+  title: string\r\n+\r\n+  constructor(title: string) {\r\n+    this.title = title\r\n+  }\r\n+\r\n+  itemTitle(): string {\r\n+    return `title ${this.title}`\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1649362669881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,7 @@\n     this.title = title\r\n   }\r\n \r\n   itemTitle(): string {\r\n-    return `title ${this.title}`\r\n+    return `o titulo do post é: ${this.title}`\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1649362707278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,4 +180,9 @@\n   itemTitle(): string {\r\n     return `o titulo do post é: ${this.title}`\r\n   }\r\n }\r\n+\r\n+const myPost = new blogPost('hellow world')\r\n+\r\n+console.log(myPost.itemTitle());\r\n+\r\n"
+                },
+                {
+                    "date": 1649362767879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -185,4 +185,6 @@\n const myPost = new blogPost('hellow world')\r\n \r\n console.log(myPost.itemTitle());\r\n \r\n+\r\n+// 10 - overirde de metodos\r\n"
+                },
+                {
+                    "date": 1649362934842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -187,4 +187,17 @@\n console.log(myPost.itemTitle());\r\n \r\n \r\n // 10 - overirde de metodos\r\n+class Base {\r\n+  someMethod() {\r\n+    console.log('alguma coisa');\r\n+  }\r\n+}\r\n+\r\n+class Nova extends Base {\r\n+\r\n+}\r\n+\r\n+const myObject = new Nova()\r\n+\r\n+myObject.someMethod();\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649362971270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -194,9 +194,11 @@\n   }\r\n }\r\n \r\n class Nova extends Base {\r\n-\r\n+  someMethod() {\r\n+    console.log('testando outra coisa');\r\n+  }\r\n }\r\n \r\n const myObject = new Nova()\r\n \r\n"
+                },
+                {
+                    "date": 1649363204293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -201,5 +201,16 @@\n }\r\n \r\n const myObject = new Nova()\r\n \r\n-myObject.someMethod();\n\\ No newline at end of file\n+myObject.someMethod();\r\n+\r\n+\r\n+// 11 - public\r\n+class C {\r\n+  x = 10\r\n+}\r\n+\r\n+const c = new C()\r\n+\r\n+console.log(c.x);\r\n+\r\n"
+                },
+                {
+                    "date": 1649363261299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -206,11 +206,14 @@\n \r\n \r\n // 11 - public\r\n class C {\r\n-  x = 10\r\n+  public x = 10\r\n }\r\n \r\n+class D extends C { }\r\n+\r\n const c = new C()\r\n-\r\n console.log(c.x);\r\n \r\n+const d = new D()\r\n+console.log(d.x);\r\n"
+                },
+                {
+                    "date": 1649363280834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -216,4 +216,7 @@\n console.log(c.x);\r\n \r\n const d = new D()\r\n console.log(d.x);\r\n+\r\n+\r\n+// 12 - protected\r\n"
+                },
+                {
+                    "date": 1649363351950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -219,4 +219,12 @@\n console.log(d.x);\r\n \r\n \r\n // 12 - protected\r\n+class E {\r\n+  protected x = 10\r\n+}\r\n+\r\n+class F extends E { }\r\n+\r\n+const fIns = new F()\r\n+console.log(fIns.x);\r\n"
+                },
+                {
+                    "date": 1649363360653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -220,9 +220,9 @@\n \r\n \r\n // 12 - protected\r\n class E {\r\n-  protected x = 10\r\n+  protected x = 22\r\n }\r\n \r\n class F extends E { }\r\n \r\n"
+                },
+                {
+                    "date": 1649363428215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -223,8 +223,13 @@\n class E {\r\n   protected x = 22\r\n }\r\n \r\n-class F extends E { }\r\n+class F extends E {\r\n+  showX() {\r\n+    console.log(`X: ${this.x}`);\r\n \r\n+  }\r\n+}\r\n+\r\n const fIns = new F()\r\n-console.log(fIns.x);\r\n+console.log(fIns.showX());\r\n"
+                },
+                {
+                    "date": 1649363455075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -226,9 +226,8 @@\n \r\n class F extends E {\r\n   showX() {\r\n     console.log(`X: ${this.x}`);\r\n-\r\n   }\r\n }\r\n \r\n const fIns = new F()\r\n"
+                },
+                {
+                    "date": 1649363481458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -230,5 +230,5 @@\n   }\r\n }\r\n \r\n const fIns = new F()\r\n-console.log(fIns.showX());\r\n+fIns.showX();\r\n"
+                },
+                {
+                    "date": 1649363524022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,8 +221,12 @@\n \r\n // 12 - protected\r\n class E {\r\n   protected x = 22\r\n+\r\n+  protected protectedMethod() {\r\n+    console.log('este metodo é protegido');\r\n+  }\r\n }\r\n \r\n class F extends E {\r\n   showX() {\r\n"
+                },
+                {
+                    "date": 1649363602506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -231,8 +231,14 @@\n class F extends E {\r\n   showX() {\r\n     console.log(`X: ${this.x}`);\r\n   }\r\n+\r\n+  showProtectedMethod() {\r\n+    this.protectedMethod()\r\n+  }\r\n }\r\n \r\n const fIns = new F()\r\n fIns.showX();\r\n+\r\n+fIns.showProtectedMethod()\r\n"
+                },
+                {
+                    "date": 1649363628082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -241,4 +241,8 @@\n const fIns = new F()\r\n fIns.showX();\r\n \r\n fIns.showProtectedMethod()\r\n+\r\n+\r\n+// 13 - private\r\n+\r\n"
+                },
+                {
+                    "date": 1649363685231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -244,5 +244,7 @@\n fIns.showProtectedMethod()\r\n \r\n \r\n // 13 - private\r\n-\r\n+class PrivateClass {\r\n+  private name = 'private'\r\n+}\r\n"
+                },
+                {
+                    "date": 1649363816609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -246,5 +246,14 @@\n \r\n // 13 - private\r\n class PrivateClass {\r\n   private name = 'private'\r\n+\r\n+  showName() {\r\n+    return this.name\r\n+  }\r\n }\r\n+\r\n+const pObj = new PrivateClass()\r\n+//console.log(pObj.name);\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1649363829186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -254,6 +254,8 @@\n }\r\n \r\n const pObj = new PrivateClass()\r\n //console.log(pObj.name);\r\n+console.log(pObj.showName());\r\n \r\n \r\n+\r\n"
+                },
+                {
+                    "date": 1649363927024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -250,12 +250,21 @@\n \r\n   showName() {\r\n     return this.name\r\n   }\r\n+\r\n+  private privateMethod() {\r\n+    console.log('metodo privado');\r\n+  }\r\n+\r\n+  showPrivateMethod() {\r\n+    this.privateMethod()\r\n+  }\r\n }\r\n \r\n const pObj = new PrivateClass()\r\n //console.log(pObj.name);\r\n console.log(pObj.showName());\r\n+console.log(pObj.showPrivateMethod());\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1649363937192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -263,8 +263,8 @@\n \r\n const pObj = new PrivateClass()\r\n //console.log(pObj.name);\r\n console.log(pObj.showName());\r\n-console.log(pObj.showPrivateMethod());\r\n+pObj.showPrivateMethod();\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1649363951734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -266,5 +266,5 @@\n console.log(pObj.showName());\r\n pObj.showPrivateMethod();\r\n \r\n \r\n-\r\n+// 14 - static\r\n"
+                },
+                {
+                    "date": 1649364245048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -267,4 +267,9 @@\n pObj.showPrivateMethod();\r\n \r\n \r\n // 14 - static\r\n+class StaticMembers {\r\n+  static prop = 'teste static'\r\n+}\r\n+\r\n+console.log(StaticMembers.prop);\r\n"
+                },
+                {
+                    "date": 1649364286227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,7 +269,14 @@\n \r\n // 14 - static\r\n class StaticMembers {\r\n   static prop = 'teste static'\r\n+\r\n+  static staticMethod() {\r\n+    console.log('este é um metodo estatico');\r\n+\r\n+  }\r\n }\r\n \r\n console.log(StaticMembers.prop);\r\n+console.log(StaticMembers.staticMethod());\r\n+\r\n"
+                },
+                {
+                    "date": 1649364294213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -277,6 +277,6 @@\n   }\r\n }\r\n \r\n console.log(StaticMembers.prop);\r\n-console.log(StaticMembers.staticMethod());\r\n+StaticMembers.staticMethod();\r\n \r\n"
+                },
+                {
+                    "date": 1649364434272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -279,4 +279,15 @@\n \r\n console.log(StaticMembers.prop);\r\n StaticMembers.staticMethod();\r\n \r\n+\r\n+// 15 - generic class\r\n+class Item<T, U> {\r\n+  first\r\n+  second\r\n+\r\n+  constructor(first: T, second: U) {\r\n+    this.first = first\r\n+    this.second = second\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649364510107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -289,5 +289,8 @@\n   constructor(first: T, second: U) {\r\n     this.first = first\r\n     this.second = second\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+const newItem = new Item(\"caixa\", 'supresa')\r\n+console.log(newItem);\r\n"
+                },
+                {
+                    "date": 1649364571117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -289,8 +289,14 @@\n   constructor(first: T, second: U) {\r\n     this.first = first\r\n     this.second = second\r\n   }\r\n+\r\n+  get showFirst() {\r\n+    return `o first é: ${this.first}`\r\n+  }\r\n }\r\n \r\n const newItem = new Item(\"caixa\", 'supresa')\r\n console.log(newItem);\r\n+console.log(newItem.showFirst);\r\n+\r\n"
+                },
+                {
+                    "date": 1649364609263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -298,5 +298,5 @@\n \r\n const newItem = new Item(\"caixa\", 'supresa')\r\n console.log(newItem);\r\n console.log(newItem.showFirst);\r\n-\r\n+console.log(typeof newItem.first);\r\n"
+                },
+                {
+                    "date": 1649364615962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -298,5 +298,5 @@\n \r\n const newItem = new Item(\"caixa\", 'supresa')\r\n console.log(newItem);\r\n console.log(newItem.showFirst);\r\n-console.log(typeof newItem.first);\r\n+console.log(typeof newItem.showFirst);\r\n"
+                },
+                {
+                    "date": 1649364626117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -298,5 +298,5 @@\n \r\n const newItem = new Item(\"caixa\", 'supresa')\r\n console.log(newItem);\r\n console.log(newItem.showFirst);\r\n-console.log(typeof newItem.showFirst);\r\n+console.log(typeof newItem.first);\r\n"
+                },
+                {
+                    "date": 1649364667904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -299,4 +299,10 @@\n const newItem = new Item(\"caixa\", 'supresa')\r\n console.log(newItem);\r\n console.log(newItem.showFirst);\r\n console.log(typeof newItem.first);\r\n+\r\n+const secItem = new Item(12, true)\r\n+console.log(secItem);\r\n+console.log(secItem.showFirst);\r\n+console.log(typeof secItem.first);\r\n+\r\n"
+                },
+                {
+                    "date": 1649364948313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -305,4 +305,13 @@\n console.log(secItem);\r\n console.log(secItem.showFirst);\r\n console.log(typeof secItem.first);\r\n \r\n+\r\n+// 16 - parameters properties\r\n+class ParamProperties {\r\n+  constructor(public name: string, private qty: number, private price: number) {\r\n+    this.name = name;\r\n+    this.qty = qty;\r\n+    this.price = price;\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1649364994814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -314,4 +314,6 @@\n     this.qty = qty;\r\n     this.price = price;\r\n   }\r\n }\r\n+\r\n+const newShirt = new ParamProperties('camisa', 5, 19.99);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649365012083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -315,5 +315,6 @@\n     this.price = price;\r\n   }\r\n }\r\n \r\n-const newShirt = new ParamProperties('camisa', 5, 19.99);\n\\ No newline at end of file\n+const newShirt = new ParamProperties('camisa', 5, 19.99);\r\n+console.log(newShirt.name);\r\n"
+                },
+                {
+                    "date": 1649365111512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -313,8 +313,18 @@\n     this.name = name;\r\n     this.qty = qty;\r\n     this.price = price;\r\n   }\r\n+\r\n+  get showQty() {\r\n+    return `qtd total: ${this.qty}`\r\n+  }\r\n+\r\n+  get showPrice() {\r\n+    return `valor total: ${this.price}`\r\n+  }\r\n }\r\n \r\n const newShirt = new ParamProperties('camisa', 5, 19.99);\r\n console.log(newShirt.name);\r\n+console.log(newShirt.showQty);\r\n+console.log(newShirt.showPrice);\r\n"
+                },
+                {
+                    "date": 1649365297220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -327,4 +327,15 @@\n const newShirt = new ParamProperties('camisa', 5, 19.99);\r\n console.log(newShirt.name);\r\n console.log(newShirt.showQty);\r\n console.log(newShirt.showPrice);\r\n+\r\n+\r\n+// 17 - class expression\r\n+const myClass = class <T> {\r\n+  name\r\n+\r\n+  constructor(name: T) {\r\n+    this.name = name;\r\n+  }\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649365348230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -338,4 +338,6 @@\n     this.name = name;\r\n   }\r\n }\r\n \r\n+const pessoaA = new myClass('jones')\r\n+console.log(pessoaA);\r\n"
+                },
+                {
+                    "date": 1649365377494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -340,4 +340,6 @@\n }\r\n \r\n const pessoaA = new myClass('jones')\r\n console.log(pessoaA);\r\n+console.log(pessoaA.name);\r\n+\r\n"
+                },
+                {
+                    "date": 1649365391498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -342,4 +342,8 @@\n const pessoaA = new myClass('jones')\r\n console.log(pessoaA);\r\n console.log(pessoaA.name);\r\n \r\n+\r\n+// 18 - classe abstrata\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1649365469177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -344,6 +344,8 @@\n console.log(pessoaA.name);\r\n \r\n \r\n // 18 - classe abstrata\r\n+abstract class AbstClass {\r\n+  abstract showName(): void\r\n+}\r\n \r\n-\r\n"
+                },
+                {
+                    "date": 1649365606903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -345,7 +345,20 @@\n \r\n \r\n // 18 - classe abstrata\r\n abstract class AbstClass {\r\n-  abstract showName(): void\r\n+  abstract showName(): void;\r\n }\r\n \r\n+class AbstExe extends AbstClass {\r\n+  name: string\r\n+\r\n+  constructor(name: string) {\r\n+    super()\r\n+    this.name = name\r\n+  }\r\n+\r\n+  showName(): void {\r\n+    console.log(`o nome é: ${this.name}`);\r\n+\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649365683407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -358,7 +358,9 @@\n   }\r\n \r\n   showName(): void {\r\n     console.log(`o nome é: ${this.name}`);\r\n+  }\r\n+}\r\n \r\n\\ No newline at end of file\n-  }\r\n-}\n+const newAbsObj = new AbstExe('carlos')\r\n+newAbsObj.showName();\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649365700545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -362,5 +362,8 @@\n   }\r\n }\r\n \r\n const newAbsObj = new AbstExe('carlos')\r\n-newAbsObj.showName();\n\\ No newline at end of file\n+newAbsObj.showName();\r\n+\r\n+\r\n+// 19 - relacao entre classes\r\n"
+                },
+                {
+                    "date": 1649365806625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -366,4 +366,14 @@\n newAbsObj.showName();\r\n \r\n \r\n // 19 - relacao entre classes\r\n+class Dog {\r\n+  name!: string\r\n+}\r\n+\r\n+class Cat {\r\n+  name!: string\r\n+}\r\n+\r\n+const doguinho: Dog = new Cat();\r\n+\r\n"
+                },
+                {
+                    "date": 1649365829542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -376,4 +376,5 @@\n }\r\n \r\n const doguinho: Dog = new Cat();\r\n \r\n+console.log(doguinho);\r\n"
+                }
+            ],
+            "date": 1649360253790,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}
