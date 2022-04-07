@@ -1,0 +1,134 @@
+{
+    "sourceFile": "07_criacao_tipos/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1649354115254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649354145587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,7 @@\n   return `o dado é ${arg}`\r\n }\r\n \r\n console.log(showData(5));\r\n-console.log(showData('teste'));\r\n+console.log(showData('testando generic'));\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1649354186069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,9 @@\n }\r\n \r\n console.log(showData(5));\r\n console.log(showData('testando generic'));\r\n+console.log(showData(true));\r\n+console.log(showData({ teste: 'testando generic' }));\r\n+console.log(showData(['testando', 'generic']));\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1649354372110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,8 @@\n console.log(showData({ teste: 'testando generic' }));\r\n console.log(showData(['testando', 'generic']));\r\n \r\n \r\n+// 2 - constraint em generics - tipos aceitos\r\n+function showProductName<T extends { name: string }>(obj: T): string {\r\n+  return `o nome do produto é ${obj.name}`;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649354406154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,9 @@\n \r\n // 2 - constraint em generics - tipos aceitos\r\n function showProductName<T extends { name: string }>(obj: T): string {\r\n   return `o nome do produto é ${obj.name}`;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+const myObj = { name: 'porta', cor: 'branca' }\r\n+\r\n+showProductName(myObj);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649354418757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,5 @@\n }\r\n \r\n const myObj = { name: 'porta', cor: 'branca' }\r\n \r\n-showProductName(myObj);\n\\ No newline at end of file\n+console.log(showProductName(myObj));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649354499124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,8 @@\n   return `o nome do produto é ${obj.name}`;\r\n }\r\n \r\n const myObj = { name: 'porta', cor: 'branca' }\r\n+const otherObj = { name: 'carro', wheels: 4, engine: 1.0 }\r\n \r\n\\ No newline at end of file\n-console.log(showProductName(myObj));\n+console.log(showProductName(myObj));\r\n+console.log(showProductName(otherObj));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649354727297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,15 @@\n const myObj = { name: 'porta', cor: 'branca' }\r\n const otherObj = { name: 'carro', wheels: 4, engine: 1.0 }\r\n \r\n console.log(showProductName(myObj));\r\n-console.log(showProductName(otherObj));\n\\ No newline at end of file\n+console.log(showProductName(otherObj));\r\n+\r\n+// 2 - generics com interface\r\n+interface IMyObj<T, U> {\r\n+  name: string\r\n+  wheels: T\r\n+  engine: U\r\n+}\r\n+\r\n+type TCar = IMyObj<number, number>\r\n+type TPen = IMyObj<boolean, boolean>\r\n"
+                },
+                {
+                    "date": 1649354770787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,4 +29,6 @@\n }\r\n \r\n type TCar = IMyObj<number, number>\r\n type TPen = IMyObj<boolean, boolean>\r\n+\r\n+const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500 }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649354779067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,6 @@\n \r\n type TCar = IMyObj<number, number>\r\n type TPen = IMyObj<boolean, boolean>\r\n \r\n-const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500 }\n\\ No newline at end of file\n+const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500 }\r\n+console.log(myCar);\r\n"
+                },
+                {
+                    "date": 1649354840883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,5 +31,7 @@\n type TCar = IMyObj<number, number>\r\n type TPen = IMyObj<boolean, boolean>\r\n \r\n const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500 }\r\n+const myPen: TPen = { name: 'canetra bic', wheels: false, engine: false }\r\n console.log(myCar);\r\n+console.log(myPen);\r\n"
+                },
+                {
+                    "date": 1649354944539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,17 +21,18 @@\n console.log(showProductName(myObj));\r\n console.log(showProductName(otherObj));\r\n \r\n // 2 - generics com interface\r\n-interface IMyObj<T, U> {\r\n+interface IMyObj<T, U, Q> {\r\n   name: string\r\n   wheels: T\r\n   engine: U\r\n+  color: Q\r\n }\r\n \r\n-type TCar = IMyObj<number, number>\r\n-type TPen = IMyObj<boolean, boolean>\r\n+type TCar = IMyObj<number, number, boolean>\r\n+type TPen = IMyObj<boolean, boolean, string>\r\n \r\n-const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500 }\r\n-const myPen: TPen = { name: 'canetra bic', wheels: false, engine: false }\r\n+const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500, color: false }\r\n+const myPen: TPen = { name: 'canetra bic', wheels: false, engine: false, color: 'vermelha' }\r\n console.log(myCar);\r\n console.log(myPen);\r\n"
+                },
+                {
+                    "date": 1649354960738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,11 @@\n   engine: U\r\n   color: Q\r\n }\r\n \r\n-type TCar = IMyObj<number, number, boolean>\r\n+type TCar = IMyObj<number, number, string>\r\n type TPen = IMyObj<boolean, boolean, string>\r\n \r\n-const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500, color: false }\r\n+const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500, color: 'preto' }\r\n const myPen: TPen = { name: 'canetra bic', wheels: false, engine: false, color: 'vermelha' }\r\n console.log(myCar);\r\n console.log(myPen);\r\n"
+                },
+                {
+                    "date": 1649355570332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \r\n console.log(showProductName(myObj));\r\n console.log(showProductName(otherObj));\r\n \r\n-// 2 - generics com interface\r\n+// 3 - generics com interface\r\n interface IMyObj<T, U, Q> {\r\n   name: string\r\n   wheels: T\r\n   engine: U\r\n@@ -35,4 +35,17 @@\n const myCar: TCar = { name: 'fusca', wheels: 4, engine: 1500, color: 'preto' }\r\n const myPen: TPen = { name: 'canetra bic', wheels: false, engine: false, color: 'vermelha' }\r\n console.log(myCar);\r\n console.log(myPen);\r\n+\r\n+\r\n+// 4 - type parameters\r\n+function getSomeKey<T, K extends keyof T>(obj: T, key: K) {\r\n+  return `a chave ${key} esta presente no objeto e tem o valor de ${obj[key]}`\r\n+}\r\n+\r\n+const server = {\r\n+  hd: '2tb',\r\n+  ram: '32gb'\r\n+}\r\n+\r\n+console.log(getSomeKey(server, 'ram'));\r\n"
+                },
+                {
+                    "date": 1649355607005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,4 +48,5 @@\n   ram: '32gb'\r\n }\r\n \r\n console.log(getSomeKey(server, 'ram'));\r\n+//console.log(getSomeKey(server, 'teste'));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649355877730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,5 +48,22 @@\n   ram: '32gb'\r\n }\r\n \r\n console.log(getSomeKey(server, 'ram'));\r\n-//console.log(getSomeKey(server, 'teste'));\n\\ No newline at end of file\n+//console.log(getSomeKey(server, 'teste'));\r\n+\r\n+\r\n+// 5 - keyof type operator\r\n+type TCharacter = { name: string, age: number, hasDriveLicense: boolean }\r\n+\r\n+type TC = keyof TCharacter\r\n+\r\n+function showCharName(obj: TCharacter, name: TC): string {\r\n+  return `${obj[name]}`\r\n+}\r\n+\r\n+const myChar = {\r\n+  name: 'lincoln',\r\n+  age: 38,\r\n+  hasDriveLicense: true\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649355919830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,11 @@\n function showCharName(obj: TCharacter, name: TC): string {\r\n   return `${obj[name]}`\r\n }\r\n \r\n-const myChar = {\r\n+const myChar: TCharacter = {\r\n   name: 'lincoln',\r\n   age: 38,\r\n   hasDriveLicense: true\r\n }\r\n \r\n+console.log(showCharName(myChar, 'name'));\r\n"
+                },
+                {
+                    "date": 1649355934776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,5 +66,5 @@\n   age: 38,\r\n   hasDriveLicense: true\r\n }\r\n \r\n-console.log(showCharName(myChar, 'name'));\r\n+console.log(showCharName(myChar, 'age'));\r\n"
+                },
+                {
+                    "date": 1649355944242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,5 +66,6 @@\n   age: 38,\r\n   hasDriveLicense: true\r\n }\r\n \r\n+console.log(showCharName(myChar, 'name'));\r\n console.log(showCharName(myChar, 'age'));\r\n"
+                },
+                {
+                    "date": 1649355957976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,4 +68,5 @@\n }\r\n \r\n console.log(showCharName(myChar, 'name'));\r\n console.log(showCharName(myChar, 'age'));\r\n+console.log(showCharName(myChar, 'hasDriveLicense'));\r\n"
+                },
+                {
+                    "date": 1649355987868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,10 @@\n type TCharacter = { name: string, age: number, hasDriveLicense: boolean }\r\n \r\n type TC = keyof TCharacter\r\n \r\n-function showCharName(obj: TCharacter, name: TC): string {\r\n-  return `${obj[name]}`\r\n+function showCharName(obj: TCharacter, key: TC): string {\r\n+  return `${obj[key]}`\r\n }\r\n \r\n const myChar: TCharacter = {\r\n   name: 'lincoln',\r\n"
+                },
+                {
+                    "date": 1649356246282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,4 +69,13 @@\n \r\n console.log(showCharName(myChar, 'name'));\r\n console.log(showCharName(myChar, 'age'));\r\n console.log(showCharName(myChar, 'hasDriveLicense'));\r\n+\r\n+\r\n+// 6 - typeof type operator\r\n+const userName: string = 'lincoln'\r\n+const userName2: typeof userName = 'noah'\r\n+\r\n+type x = typeof userName\r\n+const userName3: x = 'lucas'\r\n+\r\n"
+                },
+                {
+                    "date": 1649356558542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,4 +78,15 @@\n \r\n type x = typeof userName\r\n const userName3: x = 'lucas'\r\n \r\n+\r\n+// 7 - indexed access types\r\n+type TTruck = { km: number, kg: number, description: string }\r\n+\r\n+type TKm = TTruck['km']\r\n+\r\n+const newTruck: TTruck = {\r\n+  km: 10000,\r\n+  kg: 5000,\r\n+  description: 'caminhao para pouca carga'\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649356630660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,5 +88,11 @@\n const newTruck: TTruck = {\r\n   km: 10000,\r\n   kg: 5000,\r\n   description: 'caminhao para pouca carga'\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+function showKm(km: TKm) {\r\n+  console.log(`o veiculo tem a km de: ${km}`);\r\n+}\r\n+\r\n+showKm(105841);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649356649345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,5 +94,5 @@\n function showKm(km: TKm) {\r\n   console.log(`o veiculo tem a km de: ${km}`);\r\n }\r\n \r\n-showKm(105841);\n\\ No newline at end of file\n+showKm(newTruck.km);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649356704148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,5 +94,7 @@\n function showKm(km: TKm) {\r\n   console.log(`o veiculo tem a km de: ${km}`);\r\n }\r\n \r\n-showKm(newTruck.km);\n\\ No newline at end of file\n+showKm(newTruck.km);\r\n+\r\n+// 8 - conditional types\r\n"
+                },
+                {
+                    "date": 1649356790301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,5 +96,10 @@\n }\r\n \r\n showKm(newTruck.km);\r\n \r\n-// 8 - conditional types\r\n+// 8 - conditional expressions types\r\n+interface TA { }\r\n+interface TB extends TA { }\r\n+\r\n+type myType = TB extends TA ? number : string\r\n+\r\n"
+                },
+                {
+                    "date": 1649356830277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,6 +100,8 @@\n // 8 - conditional expressions types\r\n interface TA { }\r\n interface TB extends TA { }\r\n \r\n-type myType = TB extends TA ? number : string\r\n+type TMyType = TB extends TA ? number : string\r\n \r\n+const someVar: TMyType = 5\r\n+\r\n"
+                },
+                {
+                    "date": 1649357250077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,8 +100,22 @@\n // 8 - conditional expressions types\r\n interface TA { }\r\n interface TB extends TA { }\r\n \r\n+interface TTeste {\r\n+  showName(): string\r\n+}\r\n+\r\n type TMyType = TB extends TA ? number : string\r\n \r\n const someVar: TMyType = 5\r\n \r\n+type TMyTypeB = TTeste extends { showName(): number } ? string : boolean\r\n+\r\n+\r\n+// 9 - template literals types\r\n+type TTesteA = 'text'\r\n+\r\n+type TCustomType = `some ${TTesteA}`\r\n+\r\n+const testing: TCustomType = \"some text\"\r\n+//const testing2: TCustomType = \"some text 2\"\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649357317756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,5 +117,9 @@\n \r\n type TCustomType = `some ${TTesteA}`\r\n \r\n const testing: TCustomType = \"some text\"\r\n-//const testing2: TCustomType = \"some text 2\"\n\\ No newline at end of file\n+//const testing2: TCustomType = \"some text 2\"\r\n+\r\n+type a1 = 'testando'\r\n+type a2 = 'unions'\r\n+type a3 = `${a1}` | `${a2}`\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1649354115254,
+            "name": "Commit-0",
+            "content": "// 1 - generics\r\nfunction showData<T>(arg: T): string {\r\n  return `o dado é ${arg}`\r\n}\r\n\r\nconsole.log(showData(5));\r\nconsole.log(showData('teste'));\r\n"
+        }
+    ]
+}
