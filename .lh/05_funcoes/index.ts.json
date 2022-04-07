@@ -1,0 +1,190 @@
+{
+    "sourceFile": "05_funcoes/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 43,
+            "patches": [
+                {
+                    "date": 1649345813187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649345862403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-// 1 - funcao sem retorno\r\n+// 1 - funcao sem retorno void\r\n+function semRetorno(): void {\r\n+  console.log('essa funcao nao tem retorno');\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649345899849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,5 @@\n function semRetorno(): void {\r\n   console.log('essa funcao nao tem retorno');\r\n }\r\n \r\n+semRetorno()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649345916940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n function semRetorno(): void {\r\n   console.log('essa funcao nao tem retorno');\r\n }\r\n \r\n-semRetorno()\n\\ No newline at end of file\n+semRetorno()\r\n+\r\n+// 2 - callback sem argumento\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649345953221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n }\r\n \r\n semRetorno()\r\n \r\n-// 2 - callback sem argumento\n\\ No newline at end of file\n+// 2 - callback sem argumento\r\n"
+                },
+                {
+                    "date": 1649346060552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,9 @@\n }\r\n \r\n semRetorno()\r\n \r\n-// 2 - callback sem argumento\r\n+// 2 - callback como argumento\r\n+function saudacao(nome: string): string {\r\n+  return `Ola ${nome}`\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1649346119092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,5 @@\n function saudacao(nome: string): string {\r\n   return `Ola ${nome}`\r\n }\r\n \r\n+function preSaudacao(f: (name: string) => string);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649346250959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,13 @@\n function saudacao(nome: string): string {\r\n   return `Ola ${nome}`\r\n }\r\n \r\n-function preSaudacao(f: (name: string) => string);\n\\ No newline at end of file\n+function preSaudacao(f: (name: string) => string, usuario: string) {\r\n+  console.log('preparando a funcao');\r\n+\r\n+  const greet = f(usuario);\r\n+\r\n+  console.log(greet);\r\n+}\r\n+\r\n+preSaudacao(saudacao, 'lincoln')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649346387997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,10 @@\n \r\n   console.log(greet);\r\n }\r\n \r\n-preSaudacao(saudacao, 'lincoln')\n\\ No newline at end of file\n+preSaudacao(saudacao, 'lincoln')\r\n+\r\n+// 2 - funcao generica\r\n+function primeiroElemento(arr) {\r\n+  return arr[0];\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649346488605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,9 @@\n \r\n preSaudacao(saudacao, 'lincoln')\r\n \r\n // 2 - funcao generica\r\n-function primeiroElemento(arr) {\r\n+function primeiroElemento<T>(arr: T[]): T {\r\n   return arr[0];\r\n\\ No newline at end of file\n-}\n+}\r\n+\r\n+primeiroElemento([1, 2, 3]);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649346503011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,5 @@\n function primeiroElemento<T>(arr: T[]): T {\r\n   return arr[0];\r\n }\r\n \r\n-primeiroElemento([1, 2, 3]);\n\\ No newline at end of file\n+console.log(primeiroElemento([1, 2, 3]));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649346519622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,6 @@\n function primeiroElemento<T>(arr: T[]): T {\r\n   return arr[0];\r\n }\r\n \r\n-console.log(primeiroElemento([1, 2, 3]));\n\\ No newline at end of file\n+console.log(primeiroElemento([1, 2, 3]));\r\n+console.log(primeiroElemento(['3', 'lin']));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649346533714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,5 +25,6 @@\n   return arr[0];\r\n }\r\n \r\n console.log(primeiroElemento([1, 2, 3]));\r\n-console.log(primeiroElemento(['3', 'lin']));\n\\ No newline at end of file\n+console.log(primeiroElemento(['3', 'lin']));\r\n+console.log(primeiroElemento(['ruteski', true]));\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649346654604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,15 @@\n }\r\n \r\n console.log(primeiroElemento([1, 2, 3]));\r\n console.log(primeiroElemento(['3', 'lin']));\r\n-console.log(primeiroElemento(['ruteski', true]));\n\\ No newline at end of file\n+console.log(primeiroElemento(['ruteski', true]));\r\n+\r\n+function mergeObjects<U, T>(obj1: U, obj2: T) {\r\n+  return {\r\n+    ...obj1,\r\n+    ...obj2,\r\n+  }\r\n+}\r\n+\r\n+// 3 - constraint em generic function\r\n+\r\n"
+                },
+                {
+                    "date": 1649346714857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,6 +35,12 @@\n     ...obj2,\r\n   }\r\n }\r\n \r\n+const newObject = mergeObjects({ name: 'lincoln' }, { age: 38, job: 'programador' });\r\n+\r\n+console.log(newObject);\r\n+\r\n+\r\n+\r\n // 3 - constraint em generic function\r\n \r\n"
+                },
+                {
+                    "date": 1649346959773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n preSaudacao(saudacao, 'lincoln')\r\n \r\n-// 2 - funcao generica\r\n+// 3 - funcao generica\r\n function primeiroElemento<T>(arr: T[]): T {\r\n   return arr[0];\r\n }\r\n \r\n@@ -40,7 +40,14 @@\n \r\n console.log(newObject);\r\n \r\n \r\n+// 4 - constraint em generic function\r\n+function biggestNumber<T extends number | string>(a: T, b: T): T {\r\n+  let biggest;\r\n \r\n-// 3 - constraint em generic function\r\n-\r\n+  if (+a > +b) {\r\n+    biggest = a\r\n+  } else {\r\n+    biggest = b\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1649346971949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,5 +49,7 @@\n     biggest = a\r\n   } else {\r\n     biggest = b\r\n   }\r\n+\r\n+  return biggest\r\n }\r\n"
+                },
+                {
+                    "date": 1649347029696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n \r\n \r\n // 4 - constraint em generic function\r\n function biggestNumber<T extends number | string>(a: T, b: T): T {\r\n-  let biggest;\r\n+  let biggest: T;\r\n \r\n   if (+a > +b) {\r\n     biggest = a\r\n   } else {\r\n@@ -52,4 +52,8 @@\n   }\r\n \r\n   return biggest\r\n }\r\n+\r\n+console.log(biggestNumber(5, 3));\r\n+console.log(biggestNumber(9, 4));\r\n+\r\n"
+                },
+                {
+                    "date": 1649347059494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,5 +55,7 @@\n }\r\n \r\n console.log(biggestNumber(5, 3));\r\n console.log(biggestNumber(9, 4));\r\n+console.log(biggestNumber(\"17\", \"52\"));\r\n \r\n+\r\n"
+                },
+                {
+                    "date": 1649347258366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,5 +57,10 @@\n console.log(biggestNumber(5, 3));\r\n console.log(biggestNumber(9, 4));\r\n console.log(biggestNumber(\"17\", \"52\"));\r\n \r\n+// 5 - especificar tipo de argumento\r\n+function mergeArrays<T>(arr1: T[], arr2: T[]) {\r\n+  return arr1.concat(arr2)\r\n+}\r\n \r\n+console.log(mergeArrays([1, 2, 3], ['teste', 'testando']));\r\n"
+                },
+                {
+                    "date": 1649347301482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,5 +62,6 @@\n function mergeArrays<T>(arr1: T[], arr2: T[]) {\r\n   return arr1.concat(arr2)\r\n }\r\n \r\n+console.log(mergeArrays([1, 2, 3], [5, 6]));\r\n console.log(mergeArrays([1, 2, 3], ['teste', 'testando']));\r\n"
+                },
+                {
+                    "date": 1649347327553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,5 +63,5 @@\n   return arr1.concat(arr2)\r\n }\r\n \r\n console.log(mergeArrays([1, 2, 3], [5, 6]));\r\n-console.log(mergeArrays([1, 2, 3], ['teste', 'testando']));\r\n+console.log(mergeArrays<number | string>([1, 2, 3], ['teste', 'testando']));\r\n"
+                },
+                {
+                    "date": 1649347564642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,4 +64,13 @@\n }\r\n \r\n console.log(mergeArrays([1, 2, 3], [5, 6]));\r\n console.log(mergeArrays<number | string>([1, 2, 3], ['teste', 'testando']));\r\n+\r\n+// 6 - parametros opcionais\r\n+function modernGreeting(nome: string, greet?: string) {\r\n+  if (greet) {\r\n+    return `ola ${greet} ${nome}, tudo bem?`\r\n+  }\r\n+\r\n+  return `ola ${nome}, tudo bem?`\r\n+}\r\n"
+                },
+                {
+                    "date": 1649347592926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,4 +73,8 @@\n   }\r\n \r\n   return `ola ${nome}, tudo bem?`\r\n }\r\n+\r\n+console.log(modernGreeting('lincoln'));\r\n+console.log(modernGreeting('lincoln', 'teste'));\r\n+\r\n"
+                },
+                {
+                    "date": 1649347608779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,6 +75,6 @@\n   return `ola ${nome}, tudo bem?`\r\n }\r\n \r\n console.log(modernGreeting('lincoln'));\r\n-console.log(modernGreeting('lincoln', 'teste'));\r\n+console.log(modernGreeting('lincoln', 'dr.'));\r\n \r\n"
+                },
+                {
+                    "date": 1649347619995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,4 +77,6 @@\n \r\n console.log(modernGreeting('lincoln'));\r\n console.log(modernGreeting('lincoln', 'dr.'));\r\n \r\n+// 7 - parame default\r\n+\r\n"
+                },
+                {
+                    "date": 1649347803249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,5 +78,11 @@\n console.log(modernGreeting('lincoln'));\r\n console.log(modernGreeting('lincoln', 'dr.'));\r\n \r\n // 7 - parame default\r\n+function somaDefault(a: number, b = 10) {\r\n+  return a + b\r\n+}\r\n \r\n+console.log(somaDefault(25.5));\r\n+console.log(somaDefault(25.2, 36.85));\r\n+\r\n"
+                },
+                {
+                    "date": 1649347844447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,11 +78,13 @@\n console.log(modernGreeting('lincoln'));\r\n console.log(modernGreeting('lincoln', 'dr.'));\r\n \r\n // 7 - parame default\r\n-function somaDefault(a: number, b = 10) {\r\n+function somaDefault(a: number, b = 10): number {\r\n   return a + b\r\n }\r\n \r\n console.log(somaDefault(25.5));\r\n console.log(somaDefault(25.2, 36.85));\r\n \r\n+// 8 - tio unknown\r\n+\r\n"
+                },
+                {
+                    "date": 1649347990173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,6 +85,12 @@\n \r\n console.log(somaDefault(25.5));\r\n console.log(somaDefault(25.2, 36.85));\r\n \r\n-// 8 - tio unknown\r\n+// 8 - tipo unknown\r\n+function doSomething(x: anknown) {\r\n+  if (Array.isArray(x)) {\r\n+    console.log(x[0]);\r\n+  }\r\n+}\r\n \r\n+doSomething([1, 2, 3])\r\n"
+                },
+                {
+                    "date": 1649347995568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n console.log(somaDefault(25.5));\r\n console.log(somaDefault(25.2, 36.85));\r\n \r\n // 8 - tipo unknown\r\n-function doSomething(x: anknown) {\r\n+function doSomething(x: unknown) {\r\n   if (Array.isArray(x)) {\r\n     console.log(x[0]);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1649348041968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,8 +89,10 @@\n // 8 - tipo unknown\r\n function doSomething(x: unknown) {\r\n   if (Array.isArray(x)) {\r\n     console.log(x[0]);\r\n+  } else if (typeof x === 'number') {\r\n+    console.log('x é um numero');\r\n   }\r\n }\r\n \r\n doSomething([1, 2, 3])\r\n"
+                },
+                {
+                    "date": 1649348056147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,4 +95,5 @@\n   }\r\n }\r\n \r\n doSomething([1, 2, 3])\r\n+doSomething(654);\r\n"
+                },
+                {
+                    "date": 1649348272897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,4 +96,9 @@\n }\r\n \r\n doSomething([1, 2, 3])\r\n doSomething(654);\r\n+\r\n+// 9 - tipo never\r\n+function showErrorMessage(msg: string) {\r\n+  throw new Error(msg);\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649348286226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,7 +98,9 @@\n doSomething([1, 2, 3])\r\n doSomething(654);\r\n \r\n // 9 - tipo never\r\n-function showErrorMessage(msg: string) {\r\n+function showErrorMessage(msg: string): never {\r\n   throw new Error(msg);\r\n\\ No newline at end of file\n-}\n+}\r\n+\r\n+showErrorMessage(\"algum erro\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649348320330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,5 +102,7 @@\n function showErrorMessage(msg: string): never {\r\n   throw new Error(msg);\r\n }\r\n \r\n-showErrorMessage(\"algum erro\");\n\\ No newline at end of file\n+//showErrorMessage(\"algum erro\");\r\n+\r\n+// 10 - rest operator\r\n"
+                },
+                {
+                    "date": 1649348329581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,5 +104,5 @@\n }\r\n \r\n //showErrorMessage(\"algum erro\");\r\n \r\n-// 10 - rest operator\r\n+// 10 - rest parameters\r\n"
+                },
+                {
+                    "date": 1649348421145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,5 +104,11 @@\n }\r\n \r\n //showErrorMessage(\"algum erro\");\r\n \r\n-// 10 - rest parameters\r\n+// 10 - rest operator\r\n+function sumAll(...n: number[]): number {\r\n+  return n.reduce((number, sum) => number + sum)\r\n+}\r\n+\r\n+console.log(sumAll[3, 5, 3, 9, 9]);\r\n+\r\n"
+                },
+                {
+                    "date": 1649348472634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,6 +109,6 @@\n function sumAll(...n: number[]): number {\r\n   return n.reduce((number, sum) => number + sum)\r\n }\r\n \r\n-console.log(sumAll[3, 5, 3, 9, 9]);\r\n+console.log(sumAll(3, 5, 3, 9, 9));\r\n \r\n"
+                },
+                {
+                    "date": 1649348519304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,5 +110,6 @@\n   return n.reduce((number, sum) => number + sum)\r\n }\r\n \r\n console.log(sumAll(3, 5, 3, 9, 9));\r\n+console.log(sumAll(385, 5.589, 35.7458));\r\n \r\n"
+                },
+                {
+                    "date": 1649348646300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,4 +112,8 @@\n \r\n console.log(sumAll(3, 5, 3, 9, 9));\r\n console.log(sumAll(385, 5.589, 35.7458));\r\n \r\n+// 11 - destructuring em parametros\r\n+function showProductDetails({ name, price }) {\r\n+  return `O nome do produto é ${name} e ele custa R$${price}`\r\n+}\r\n"
+                },
+                {
+                    "date": 1649348657428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,7 +113,7 @@\n console.log(sumAll(3, 5, 3, 9, 9));\r\n console.log(sumAll(385, 5.589, 35.7458));\r\n \r\n // 11 - destructuring em parametros\r\n-function showProductDetails({ name, price }) {\r\n+function showProductDetails({ name, price }): string {\r\n   return `O nome do produto é ${name} e ele custa R$${price}`\r\n }\r\n"
+                },
+                {
+                    "date": 1649348745364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,7 +113,7 @@\n console.log(sumAll(3, 5, 3, 9, 9));\r\n console.log(sumAll(385, 5.589, 35.7458));\r\n \r\n // 11 - destructuring em parametros\r\n-function showProductDetails({ name, price }): string {\r\n+function showProductDetails({ name, price }: { name: string, price: number }): string {\r\n   return `O nome do produto é ${name} e ele custa R$${price}`\r\n }\r\n"
+                },
+                {
+                    "date": 1649348814897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,4 +116,8 @@\n // 11 - destructuring em parametros\r\n function showProductDetails({ name, price }: { name: string, price: number }): string {\r\n   return `O nome do produto é ${name} e ele custa R$${price}`\r\n }\r\n+\r\n+const shirt = { name: 'camisa', price: 49.99 }\r\n+\r\n+showProductDetails(shirt);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649348838091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,5 +119,5 @@\n }\r\n \r\n const shirt = { name: 'camisa', price: 49.99 }\r\n \r\n-showProductDetails(shirt);\n\\ No newline at end of file\n+console.log(showProductDetails(shirt));\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1649345813187,
+            "name": "Commit-0",
+            "content": "// 1 - funcao sem retorno\r\n"
+        }
+    ]
+}

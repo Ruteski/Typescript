@@ -1,0 +1,18 @@
+{
+    "sourceFile": "05_funcoes/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1649345740913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1649345740913,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"pt-br\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>funcoes</title>\r\n  <script src=\"index.js\" defer></script>\r\n</head>\r\n<body>\r\n  <h1>funcoes</h1>\r\n</body>\r\n</html>"
+        }
+    ]
+}
