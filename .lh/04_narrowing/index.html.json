@@ -1,0 +1,22 @@
+{
+    "sourceFile": "04_narrowing/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1649340709809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649342105258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,6 @@\n   <script src=\"index.js\" defer></script>\r\n </head>\r\n <body>\r\n   <h1>Narrowing</h1>\r\n-  <p id=\"some-p\">algum paragrafo</p>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1649340709809,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"pt-br\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>Narrowing</title>\r\n  <script src=\"index.js\" defer></script>\r\n</head>\r\n<body>\r\n  <h1>Narrowing</h1>\r\n  <p id=\"some-p\">algum paragrafo</p>\r\n</body>\r\n</html>"
+        }
+    ]
+}

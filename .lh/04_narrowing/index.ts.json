@@ -1,0 +1,122 @@
+{
+    "sourceFile": "04_narrowing/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1649340692873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649342219405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+// 1 - type guard\r\n+function soma(a: number | string, b: number | string) {\r\n+  if (typeof a === 'string' && typeof b === 'string') {\r\n+    console.log(parseFloat(a) + parseFloat(b));\r\n+  }\r\n+}\r\n+\r\n+soma(\"4\", \"15\")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649342282878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n // 1 - type guard\r\n function soma(a: number | string, b: number | string) {\r\n   if (typeof a === 'string' && typeof b === 'string') {\r\n     console.log(parseFloat(a) + parseFloat(b));\r\n+  } else if (typeof a === 'number' && typeof b === 'number') {\r\n+    console.log(a + b);\r\n+\r\n   }\r\n }\r\n \r\n soma(\"4\", \"15\")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649342292420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,6 @@\n \r\n   }\r\n }\r\n \r\n-soma(\"4\", \"15\")\n\\ No newline at end of file\n+soma(\"4\", \"15\")\r\n+soma(15, 25)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649342354439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n   if (typeof a === 'string' && typeof b === 'string') {\r\n     console.log(parseFloat(a) + parseFloat(b));\r\n   } else if (typeof a === 'number' && typeof b === 'number') {\r\n     console.log(a + b);\r\n+  } else {\r\n+    console.log(\"impossivel realizar a soma\");\r\n \r\n   }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1649342542043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n   } else if (typeof a === 'number' && typeof b === 'number') {\r\n     console.log(a + b);\r\n   } else {\r\n     console.log(\"impossivel realizar a soma\");\r\n-\r\n   }\r\n }\r\n \r\n soma(\"4\", \"15\")\r\n-soma(15, 25)\n\\ No newline at end of file\n+soma(15, 25)\r\n+soma(\"15\", 53.3)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649342750151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,16 @@\n }\r\n \r\n soma(\"4\", \"15\")\r\n soma(15, 25)\r\n-soma(\"15\", 53.3)\n\\ No newline at end of file\n+soma(\"15\", 53.3)\r\n+\r\n+// 2 - checando se o valor existe\r\n+function operations(arr: number[], operation: string | undefined) {\r\n+  if (operation) {\r\n+\r\n+  } else {\r\n+    console.log(\"por favor, defina uma operacao\");\r\n+  }\r\n+}\r\n+\r\n+operations([1, 2, 3]);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649342772825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n soma(15, 25)\r\n soma(\"15\", 53.3)\r\n \r\n // 2 - checando se o valor existe\r\n-function operations(arr: number[], operation: string | undefined) {\r\n+function operations(arr: number[], operation?: string | undefined) {\r\n   if (operation) {\r\n \r\n   } else {\r\n     console.log(\"por favor, defina uma operacao\");\r\n"
+                },
+                {
+                    "date": 1649342941554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,13 @@\n \r\n // 2 - checando se o valor existe\r\n function operations(arr: number[], operation?: string | undefined) {\r\n   if (operation) {\r\n+    if (operation === 'soma') {\r\n+      const sum = arr.reduce((i, total) => total + i);\r\n+    } else if (operation === 'multi') {\r\n \r\n+    }\r\n   } else {\r\n     console.log(\"por favor, defina uma operacao\");\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1649342975707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,12 @@\n function operations(arr: number[], operation?: string | undefined) {\r\n   if (operation) {\r\n     if (operation === 'soma') {\r\n       const sum = arr.reduce((i, total) => total + i);\r\n+      console.log(sum);\r\n     } else if (operation === 'multi') {\r\n-\r\n+      const sum = arr.reduce((i, total) => total * i);\r\n+      console.log(sum);\r\n     }\r\n   } else {\r\n     console.log(\"por favor, defina uma operacao\");\r\n   }\r\n"
+                },
+                {
+                    "date": 1649342986871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n     console.log(\"por favor, defina uma operacao\");\r\n   }\r\n }\r\n \r\n-operations([1, 2, 3]);\n\\ No newline at end of file\n+operations([1, 2, 3], \"soma\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343004753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n     console.log(\"por favor, defina uma operacao\");\r\n   }\r\n }\r\n \r\n-operations([1, 2, 3], \"soma\");\n\\ No newline at end of file\n+operations([1, 2, 3], \"multi\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343039796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,7 @@\n     console.log(\"por favor, defina uma operacao\");\r\n   }\r\n }\r\n \r\n-operations([1, 2, 3], \"multi\");\n\\ No newline at end of file\n+operations([1, 2, 3]);\r\n+operations([1, 2, 3], \"soma\");\r\n+operations([3, 4, 3], \"multi\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343065485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,8 @@\n }\r\n \r\n operations([1, 2, 3]);\r\n operations([1, 2, 3], \"soma\");\r\n-operations([3, 4, 3], \"multi\");\n\\ No newline at end of file\n+operations([3, 4, 3], \"multi\");\r\n+\r\n+\r\n+// 3 - instanceof\r\n"
+                },
+                {
+                    "date": 1649343158136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,4 +33,11 @@\n operations([3, 4, 3], \"multi\");\r\n \r\n \r\n // 3 - instanceof\r\n+class User {\r\n+  name: string;\r\n+\r\n+  constructor(name: string) {\r\n+    this.name = name;\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343211109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,11 @@\n \r\n   constructor(name: string) {\r\n     this.name = name;\r\n   }\r\n+}\r\n+\r\n+class SuperUser extends User {\r\n+  constructor(name: string) {\r\n+    super(name);\r\n+  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343250177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,5 +45,8 @@\n class SuperUser extends User {\r\n   constructor(name: string) {\r\n     super(name);\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+const jhon = new User(\"Jhon\");;\r\n+const paul = new User(\"Paul\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343277713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,6 +47,10 @@\n     super(name);\r\n   }\r\n }\r\n \r\n-const jhon = new User(\"Jhon\");;\r\n-const paul = new User(\"Paul\");\n\\ No newline at end of file\n+const jhon = new User(\"Jhon\");\r\n+const paul = new User(\"Paul\");\r\n+\r\n+console.log(jhon);\r\n+console.log(paul);\r\n+\r\n"
+                },
+                {
+                    "date": 1649343307194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n   }\r\n }\r\n \r\n const jhon = new User(\"Jhon\");\r\n-const paul = new User(\"Paul\");\r\n+const paul = new SuperUser(\"Paul\");\r\n \r\n console.log(jhon);\r\n console.log(paul);\r\n \r\n"
+                },
+                {
+                    "date": 1649343441384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,4 +53,11 @@\n \r\n console.log(jhon);\r\n console.log(paul);\r\n \r\n+function userGreeting(user: object) {\r\n+  if (user instanceof SuperUser) {\r\n+    console.log(`Ola ${user.name} deseja ver os dados do sistema?`);\r\n+  } else if (user instanceof User) {\r\n+    console.log(`Ola ${user.name}`);\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343464868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,5 +59,8 @@\n     console.log(`Ola ${user.name} deseja ver os dados do sistema?`);\r\n   } else if (user instanceof User) {\r\n     console.log(`Ola ${user.name}`);\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+userGreeting(jhon)\r\n+userGreeting(paul)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343783519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,5 +62,19 @@\n   }\r\n }\r\n \r\n userGreeting(jhon)\r\n-userGreeting(paul)\n\\ No newline at end of file\n+userGreeting(paul)\r\n+\r\n+// 4 - operador in\r\n+class Dog {\r\n+  nome\r\n+  raca\r\n+\r\n+  constructor(name: string, raca?: string) {\r\n+    this.nome = nome\r\n+\r\n+    if (raca) {\r\n+      this.raca = raca\r\n+    }\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649343791744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n class Dog {\r\n   nome\r\n   raca\r\n \r\n-  constructor(name: string, raca?: string) {\r\n+  constructor(nome: string, raca?: string) {\r\n     this.nome = nome\r\n \r\n     if (raca) {\r\n       this.raca = raca\r\n"
+                },
+                {
+                    "date": 1649343838145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,5 +76,8 @@\n     if (raca) {\r\n       this.raca = raca\r\n     }\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+const turca = new Dog(\"Turca\");\r\n+const bob = new Dog(\"Bob\", \"PittBull\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649344006308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,5 +79,14 @@\n   }\r\n }\r\n \r\n const turca = new Dog(\"Turca\");\r\n-const bob = new Dog(\"Bob\", \"PittBull\");\n\\ No newline at end of file\n+const bob = new Dog(\"Bob\", \"PittBull\");\r\n+\r\n+function showDogDetails(dog: Dog) {\r\n+  if ('raca' in dog) {\r\n+    console.log(`o cachorro é da raça ${dog.raca}`);\r\n+  } else {\r\n+    console.log('o cachoro é um SRD');\r\n+\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649344026301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,5 +88,8 @@\n   } else {\r\n     console.log('o cachoro é um SRD');\r\n \r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+showDogDetails(turca)\r\n+showDogDetails(bob)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649344043056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,8 @@\n   if ('raca' in dog) {\r\n     console.log(`o cachorro é da raça ${dog.raca}`);\r\n   } else {\r\n     console.log('o cachoro é um SRD');\r\n-\r\n   }\r\n }\r\n \r\n showDogDetails(turca)\r\n"
+                }
+            ],
+            "date": 1649340692873,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}
