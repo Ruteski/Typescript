@@ -5,9 +5,17 @@ interface IProps {
    content: string;
    commentsQty: number;
    tags: string[];
+   // enum
+   category: Category;
 }
 
-const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {
+export enum Category {
+   JS = 'JavaScript',
+   TS = 'Typescript',
+   P = 'Python'
+}
+
+const Destructoring = ({ title, content, commentsQty, tags, category}: IProps) => {
    return(
       <div>
          <h1>{title}</h1>
@@ -18,6 +26,7 @@ const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {
                <span>#{tag}</span>
             ))}
          </div>
+         <h4>Categoria: {category}</h4>
       </div>
    )
 }

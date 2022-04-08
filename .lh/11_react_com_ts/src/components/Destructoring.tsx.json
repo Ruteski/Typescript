@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1649444602412,
@@ -24,6 +24,26 @@
                 {
                     "date": 1649444958485,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n    return(\n       <div>\n          <h1>{title}</h1>\n          <p>{content}</p>\n+         <p>Quantidade de comentarios: {commentsQty}</p>\n          <div>\n             {tags.map((tag) => (\n                <span>#{tag}</span>\n             ))}\n"
+                },
+                {
+                    "date": 1649445854207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,16 @@\n    title: string;\n    content: string;\n    commentsQty: number;\n    tags: string[];\n+   // enum\n+   category: Category;\n }\n \n+Category {\n+   JS = 'JavaScript';\n+}\n+\n const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {\n    return(\n       <div>\n          <h1>{title}</h1>\n"
+                },
+                {
+                    "date": 1649445888833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,11 @@\n    // enum\n    category: Category;\n }\n \n-Category {\n-   JS = 'JavaScript';\n+enum Category {\n+   JS = 'JavaScript',\n+   TS = 'Typescript',\n }\n \n const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {\n    return(\n"
+                },
+                {
+                    "date": 1649445901693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \n enum Category {\n    JS = 'JavaScript',\n    TS = 'Typescript',\n+   P = 'Python'\n }\n \n const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {\n    return(\n"
+                },
+                {
+                    "date": 1649445952379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n    TS = 'Typescript',\n    P = 'Python'\n }\n \n-const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {\n+const Destructoring = ({ title, content, commentsQty, tags, category}: IProps) => {\n    return(\n       <div>\n          <h1>{title}</h1>\n          <p>{content}</p>\n@@ -25,8 +25,9 @@\n             {tags.map((tag) => (\n                <span>#{tag}</span>\n             ))}\n          </div>\n+         <h4>Categoria: {category}</h4>\n       </div>\n    )\n }\n \n"
+                },
+                {
+                    "date": 1649445976547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n    // enum\n    category: Category;\n }\n \n-enum Category {\n+export enum Category {\n    JS = 'JavaScript',\n    TS = 'Typescript',\n    P = 'Python'\n }\n"
                 }
             ],
             "date": 1649444602412,

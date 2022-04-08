@@ -1,7 +1,7 @@
 import React from 'react';
 import FirstComponent from './components/FirstComponent'
 import SecondComponent from './components/SecondeComponent'
-import Destructoring from './components/Destructoring'
+import Destructoring, {Category} from './components/Destructoring'
 import State from './components/State'
 
 
@@ -32,6 +32,7 @@ function App() {
         content='Algum Conteudo'
         commentsQty={10}
         tags={['ts', 'js']}
+        category={Category.TS}
       />
 
       <Destructoring 
@@ -39,6 +40,7 @@ function App() {
         content='Mais outro Conteudo'
         commentsQty={5}
         tags={['python']}
+        category={Category.P}
       />
 
       <State />

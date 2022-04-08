@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1649442442618,
@@ -76,6 +76,14 @@
                 {
                     "date": 1649445493344,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,10 @@\n         content='Mais outro Conteudo'\n         commentsQty={5}\n         tags={['python']}\n       />\n+\n+      <State />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1649445992257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n import FirstComponent from './components/FirstComponent'\n import SecondComponent from './components/SecondeComponent'\n-import Destructoring from './components/Destructoring'\n+import Destructoring, {Category} from './components/Destructoring'\n import State from './components/State'\n \n \n function App() {\n"
+                },
+                {
+                    "date": 1649446025606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,15 +31,17 @@\n         title='Primeiro Post'\n         content='Algum Conteudo'\n         commentsQty={10}\n         tags={['ts', 'js']}\n+        category={Category.TS}\n       />\n \n       <Destructoring \n         title='Segundo Post'\n         content='Mais outro Conteudo'\n         commentsQty={5}\n         tags={['python']}\n+        category={Category.P}\n       />\n \n       <State />\n     </div>\n"
                 }
             ],
             "date": 1649442442617,
