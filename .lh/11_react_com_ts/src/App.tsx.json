@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1649442442618,
@@ -112,6 +112,34 @@
                 {
                     "date": 1649447013479,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n   let mySecondText: textOrNull = null;\n \n   //mySecondText = 'opa';\n \n+  const testandoFixed: fixed = 'isso';\n+\n   const userGreeting = (name: string): string => {\n     return `Ola, ${name}`\n   }\n \n"
+                },
+                {
+                    "date": 1649447251562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,14 @@\n   const userGreeting = (name: string): string => {\n     return `Ola, ${name}`\n   }\n \n+  const contextValue = { \n+    language: 'javascript',\n+    framework: 'express',\n+    projects: 5\n+  }\n+\n   return (\n     <div className=\"App\">\n       <h1>Typescript com react</h1>\n       <h2>Nome: {name}</h2>\n"
+                },
+                {
+                    "date": 1649447315572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,14 @@\n \n type textOrNull = string | null\n type fixed = 'isso' | 'ou' | 'aquilo'\n \n+interface IAppContext {\n+  language: string,\n+  framework: string,\n+  projects: number\n+}\n+\n function App() {\n   const name: string = 'Lincoln'\n   const age: number = 38;\n   const isWorking: boolean = true;\n@@ -22,9 +28,9 @@\n   const userGreeting = (name: string): string => {\n     return `Ola, ${name}`\n   }\n \n-  const contextValue = { \n+  const contextValue: IAppContext = { \n     language: 'javascript',\n     framework: 'express',\n     projects: 5\n   }\n"
+                },
+                {
+                    "date": 1649447379456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+import React, {createContext} from 'react';\n import FirstComponent from './components/FirstComponent'\n import SecondComponent from './components/SecondeComponent'\n import Destructoring, {Category} from './components/Destructoring'\n import State from './components/State'\n@@ -12,8 +12,10 @@\n   framework: string,\n   projects: number\n }\n \n+const AppContext = createContext()\n+\n function App() {\n   const name: string = 'Lincoln'\n   const age: number = 38;\n   const isWorking: boolean = true;\n"
+                },
+                {
+                    "date": 1649447408349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   framework: string,\n   projects: number\n }\n \n-const AppContext = createContext()\n+const AppContext = createContext<IAppContext | null>(null)\n \n function App() {\n   const name: string = 'Lincoln'\n   const age: number = 38;\n"
+                },
+                {
+                    "date": 1649447420233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   framework: string,\n   projects: number\n }\n \n-const AppContext = createContext<IAppContext | null>(null)\n+export const AppContext = createContext<IAppContext | null>(null)\n \n function App() {\n   const name: string = 'Lincoln'\n   const age: number = 38;\n"
+                },
+                {
+                    "date": 1649447455217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n     projects: 5\n   }\n \n   return (\n+    <AppContext.Provider>\n     <div className=\"App\">\n       <h1>Typescript com react</h1>\n       <h2>Nome: {name}</h2>\n       <h2>Idade: {age}</h2>\n@@ -75,8 +76,9 @@\n       {mySecondText && (\n         <p>tem texto na variavel</p>\n       )}\n     </div>\n+    </AppContext.Provider>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1649447485937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     projects: 5\n   }\n \n   return (\n-    <AppContext.Provider>\n+    <AppContext.Provider value={contextValue}>\n     <div className=\"App\">\n       <h1>Typescript com react</h1>\n       <h2>Nome: {name}</h2>\n       <h2>Idade: {age}</h2>\n"
                 }
             ],
             "date": 1649442442617,
