@@ -1,0 +1,22 @@
+{
+    "sourceFile": "11_react_com_ts/src/components/SecondeComponent.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1649444397145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649444483847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n import React from 'react';\n \n-const SecondeComponent = () => {\n+interface IProps {\n+   name: string;\n+}\n+\n+const SecondeComponent = (props: IProps) => {\n    return(\n       <div>\n-\n+         <p>Meu segundo componente</p>\n+         <p>O nome dele é {props.name}</p>\n       </div>\n    )\n }\n \n"
+                }
+            ],
+            "date": 1649444397145,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\nconst SecondeComponent = () => {\n   return(\n      <div>\n\n      </div>\n   )\n}\n\nexport default SecondeComponent;"
+        }
+    ]
+}

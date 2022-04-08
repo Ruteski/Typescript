@@ -1,0 +1,34 @@
+{
+    "sourceFile": "11_react_com_ts/src/components/Destructoring.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1649444602412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649444650217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n import React from 'react';\n \n interface IProps {\n-   name: string;\n+   title: string;\n+   content: string;\n+   commentsQty: number;\n+   tags: string[];\n }\n \n const Destructoring = (props: IProps) => {\n    return(\n"
+                },
+                {
+                    "date": 1649444831103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n    commentsQty: number;\n    tags: string[];\n }\n \n-const Destructoring = (props: IProps) => {\n+const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {\n    return(\n       <div>\n          <p>Meu segundo componente</p>\n          <p>O nome dele é {props.name}</p>\n"
+                },
+                {
+                    "date": 1649444931856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,15 @@\n \n const Destructoring = ({ title, content, commentsQty, tags}: IProps) => {\n    return(\n       <div>\n-         <p>Meu segundo componente</p>\n-         <p>O nome dele é {props.name}</p>\n+         <h1>{title}</h1>\n+         <p>{content}</p>\n+         <div>\n+            {tags.map((tag) => (\n+               <span>#{tag}</span>\n+            ))}\n+         </div>\n       </div>\n    )\n }\n \n"
+                },
+                {
+                    "date": 1649444958485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n    return(\n       <div>\n          <h1>{title}</h1>\n          <p>{content}</p>\n+         <p>Quantidade de comentarios: {commentsQty}</p>\n          <div>\n             {tags.map((tag) => (\n                <span>#{tag}</span>\n             ))}\n"
+                }
+            ],
+            "date": 1649444602412,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\ninterface IProps {\n   name: string;\n}\n\nconst Destructoring = (props: IProps) => {\n   return(\n      <div>\n         <p>Meu segundo componente</p>\n         <p>O nome dele é {props.name}</p>\n      </div>\n   )\n}\n\nexport default Destructoring;"
+        }
+    ]
+}

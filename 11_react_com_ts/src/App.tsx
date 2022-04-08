@@ -1,5 +1,8 @@
 import React from 'react';
 import FirstComponent from './components/FirstComponent'
+import SecondComponent from './components/SecondeComponent'
+import Destructoring from './components/Destructoring'
+
 
 function App() {
   const name: string = 'Lincoln'
@@ -21,6 +24,21 @@ function App() {
 
       <h3>{userGreeting(name)}</h3>
       <FirstComponent />
+      <SecondComponent name="Segundo" />
+      
+      <Destructoring 
+        title='Primeiro Post'
+        content='Algum Conteudo'
+        commentsQty={10}
+        tags={['ts', 'js']}
+      />
+
+      <Destructoring 
+        title='Segundo Post'
+        content='Mais outro Conteudo'
+        commentsQty={5}
+        tags={['python']}
+      />
     </div>
   );
 }
