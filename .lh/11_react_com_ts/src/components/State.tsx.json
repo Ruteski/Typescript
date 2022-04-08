@@ -1,0 +1,38 @@
+{
+    "sourceFile": "11_react_com_ts/src/components/State.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1649445354946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649445368262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,7 @@\n import React from 'react';\n \n-interface IProps {\n-\n-}\n-\n-const State = (props: IProps) => {\n+const State = () => {\n    return(\n       <div>\n \n       </div>\n"
+                },
+                {
+                    "date": 1649445452414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n-import React from 'react';\n+import React, {useState} from 'react';\n \n const State = () => {\n+   const [text, setText] = useState('testando o hook')\n+\n    return(\n       <div>\n-\n+         <p>O texto é: {text}</p>\n       </div>\n    )\n }\n \n"
+                },
+                {
+                    "date": 1649445695579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,17 @@\n-import React, {useState} from 'react';\n+import React, {useState, ChangeEvent} from 'react';\n \n const State = () => {\n    const [text, setText] = useState('testando o hook')\n \n+   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {\n+      setText(e.target.value);\n+   }\n+\n    return(\n       <div>\n          <p>O texto é: {text}</p>\n+         <input type=\"text\" onChange={handleChange} />\n       </div>\n    )\n }\n \n"
+                },
+                {
+                    "date": 1649445733632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, {useState, ChangeEvent} from 'react';\n \n const State = () => {\n-   const [text, setText] = useState('testando o hook')\n+   const [text, setText] = useState<string | null>('testando o hook')\n \n    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {\n       setText(e.target.value);\n    }\n"
+                },
+                {
+                    "date": 1649445743204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, {useState, ChangeEvent} from 'react';\n \n const State = () => {\n-   const [text, setText] = useState<string | null>('testando o hook')\n+   const [text, setText] = useState<string | null>(null)\n \n    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {\n       setText(e.target.value);\n    }\n"
+                }
+            ],
+            "date": 1649445354946,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\ninterface IProps {\n\n}\n\nconst State = (props: IProps) => {\n   return(\n      <div>\n\n      </div>\n   )\n}\n\nexport default State;"
+        }
+    ]
+}
