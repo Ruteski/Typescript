@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1649442442618,
@@ -84,6 +84,34 @@
                 {
                     "date": 1649446025606,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,15 +31,17 @@\n         title='Primeiro Post'\n         content='Algum Conteudo'\n         commentsQty={10}\n         tags={['ts', 'js']}\n+        category={Category.TS}\n       />\n \n       <Destructoring \n         title='Segundo Post'\n         content='Mais outro Conteudo'\n         commentsQty={5}\n         tags={['python']}\n+        category={Category.P}\n       />\n \n       <State />\n     </div>\n"
+                },
+                {
+                    "date": 1649446218873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,18 @@\n import SecondComponent from './components/SecondeComponent'\n import Destructoring, {Category} from './components/Destructoring'\n import State from './components/State'\n \n+type textOrNull = string | null\n \n function App() {\n   const name: string = 'Lincoln'\n   const age: number = 38;\n   const isWorking: boolean = true;\n \n+  const myText: textOrNull = \"tem algum texto aqui\"\n+  let mySecondText: textOrNull = null;\n+\n   const userGreeting = (name: string): string => {\n     return `Ola, ${name}`\n   }\n \n"
+                },
+                {
+                    "date": 1649446238156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,13 @@\n   const name: string = 'Lincoln'\n   const age: number = 38;\n   const isWorking: boolean = true;\n \n-  const myText: textOrNull = \"tem algum texto aqui\"\n+  const myText: textOrNull = \"tem algum texto aqui\";\n   let mySecondText: textOrNull = null;\n \n+  mySecondText = 'opa';\n+\n   const userGreeting = (name: string): string => {\n     return `Ola, ${name}`\n   }\n \n"
+                },
+                {
+                    "date": 1649446871425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,12 @@\n         category={Category.P}\n       />\n \n       <State />\n+\n+      {myText && (\n+        <p>tem texto na variavel</p>\n+      )}\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1649446898815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,12 @@\n \n       {myText && (\n         <p>tem texto na variavel</p>\n       )}\n+\n+      {mySecondText && (\n+        <p>tem texto na variavel</p>\n+      )}\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1649446915686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n   const myText: textOrNull = \"tem algum texto aqui\";\n   let mySecondText: textOrNull = null;\n \n-  mySecondText = 'opa';\n+  //mySecondText = 'opa';\n \n   const userGreeting = (name: string): string => {\n     return `Ola, ${name}`\n   }\n"
+                },
+                {
+                    "date": 1649446979954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import Destructoring, {Category} from './components/Destructoring'\n import State from './components/State'\n \n type textOrNull = string | null\n+type fixed = 'isso' | 'ou' | 'aquilo'\n \n function App() {\n   const name: string = 'Lincoln'\n   const age: number = 38;\n"
+                },
+                {
+                    "date": 1649447013479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n   let mySecondText: textOrNull = null;\n \n   //mySecondText = 'opa';\n \n+  const testandoFixed: fixed = 'isso';\n+\n   const userGreeting = (name: string): string => {\n     return `Ola, ${name}`\n   }\n \n"
                 }
             ],
             "date": 1649442442617,

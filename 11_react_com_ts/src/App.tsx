@@ -4,11 +4,20 @@ import SecondComponent from './components/SecondeComponent'
 import Destructoring, {Category} from './components/Destructoring'
 import State from './components/State'
 
+type textOrNull = string | null
+type fixed = 'isso' | 'ou' | 'aquilo'
 
 function App() {
   const name: string = 'Lincoln'
   const age: number = 38;
   const isWorking: boolean = true;
+
+  const myText: textOrNull = "tem algum texto aqui";
+  let mySecondText: textOrNull = null;
+
+  //mySecondText = 'opa';
+
+  const testandoFixed: fixed = 'isso';
 
   const userGreeting = (name: string): string => {
     return `Ola, ${name}`
@@ -44,6 +53,14 @@ function App() {
       />
 
       <State />
+
+      {myText && (
+        <p>tem texto na variavel</p>
+      )}
+
+      {mySecondText && (
+        <p>tem texto na variavel</p>
+      )}
     </div>
   );
 }
