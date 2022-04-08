@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1649442442618,
@@ -44,6 +44,10 @@
                 {
                     "date": 1649443265566,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,22 @@\n   const name: string = 'Lincoln'\n   const age: number = 38;\n   const isWorking: boolean = true;\n \n+  const userGreeting = (name: string): string => {\n+    return `Ola, ${name}`\n+  }\n+\n   return (\n     <div className=\"App\">\n       <h1>Typescript com react</h1>\n       <h2>Nome: {name}</h2>\n       <h2>Idade: {age}</h2>\n       {isWorking && (\n         <p>Esta trabalhando</p>\n       )}\n+\n+      <h3>{userGreeting(name)}</h3>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1649444204390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react';\n+import FirstComponent from './components/FirstComponent'\n \n function App() {\n   const name: string = 'Lincoln'\n   const age: number = 38;\n@@ -18,8 +19,9 @@\n         <p>Esta trabalhando</p>\n       )}\n \n       <h3>{userGreeting(name)}</h3>\n+      <FirstComponent />\n     </div>\n   );\n }\n \n"
                 }
             ],
             "date": 1649442442617,
