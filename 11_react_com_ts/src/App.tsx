@@ -3,6 +3,7 @@ import FirstComponent from './components/FirstComponent'
 import SecondComponent from './components/SecondeComponent'
 import Destructoring, {Category} from './components/Destructoring'
 import State from './components/State'
+import Context from './components/Context'
 
 type textOrNull = string | null
 type fixed = 'isso' | 'ou' | 'aquilo'
@@ -76,6 +77,7 @@ function App() {
         {mySecondText && (
           <p>tem texto na variavel</p>
         )}
+        <Context />
       </div>
     </AppContext.Provider>
   );

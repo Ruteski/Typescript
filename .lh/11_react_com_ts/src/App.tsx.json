@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1649442442618,
@@ -140,6 +140,18 @@
                 {
                     "date": 1649447485937,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     projects: 5\n   }\n \n   return (\n-    <AppContext.Provider>\n+    <AppContext.Provider value={contextValue}>\n     <div className=\"App\">\n       <h1>Typescript com react</h1>\n       <h2>Nome: {name}</h2>\n       <h2>Idade: {age}</h2>\n"
+                },
+                {
+                    "date": 1649448662941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,46 +38,47 @@\n   }\n \n   return (\n     <AppContext.Provider value={contextValue}>\n-    <div className=\"App\">\n-      <h1>Typescript com react</h1>\n-      <h2>Nome: {name}</h2>\n-      <h2>Idade: {age}</h2>\n-      {isWorking && (\n-        <p>Esta trabalhando</p>\n-      )}\n+      <div className=\"App\">\n+        <h1>Typescript com react</h1>\n+        <h2>Nome: {name}</h2>\n+        <h2>Idade: {age}</h2>\n+        {isWorking && (\n+          <p>Esta trabalhando</p>\n+        )}\n \n-      <h3>{userGreeting(name)}</h3>\n-      <FirstComponent />\n-      <SecondComponent name=\"Segundo\" />\n-      \n-      <Destructoring \n-        title='Primeiro Post'\n-        content='Algum Conteudo'\n-        commentsQty={10}\n-        tags={['ts', 'js']}\n-        category={Category.TS}\n-      />\n+        <h3>{userGreeting(name)}</h3>\n+        <FirstComponent />\n+        <SecondComponent name=\"Segundo\" />\n+        \n+        <Destructoring \n+          title='Primeiro Post'\n+          content='Algum Conteudo'\n+          commentsQty={10}\n+          tags={['ts', 'js']}\n+          category={Category.TS}\n+        />\n \n-      <Destructoring \n-        title='Segundo Post'\n-        content='Mais outro Conteudo'\n-        commentsQty={5}\n-        tags={['python']}\n-        category={Category.P}\n-      />\n+        <Destructoring \n+          title='Segundo Post'\n+          content='Mais outro Conteudo'\n+          commentsQty={5}\n+          tags={['python']}\n+          category={Category.P}\n+        />\n \n-      <State />\n+        <State />\n \n-      {myText && (\n-        <p>tem texto na variavel</p>\n-      )}\n+        {myText && (\n+          <p>tem texto na variavel</p>\n+        )}\n \n-      {mySecondText && (\n-        <p>tem texto na variavel</p>\n-      )}\n-    </div>\n+        {mySecondText && (\n+          <p>tem texto na variavel</p>\n+        )}\n+        <Context />\n+      </div>\n     </AppContext.Provider>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1649448701076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import FirstComponent from './components/FirstComponent'\n import SecondComponent from './components/SecondeComponent'\n import Destructoring, {Category} from './components/Destructoring'\n import State from './components/State'\n+import Context from './component/Context'\n \n type textOrNull = string | null\n type fixed = 'isso' | 'ou' | 'aquilo'\n \n"
+                },
+                {
+                    "date": 1649448714568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import FirstComponent from './components/FirstComponent'\n import SecondComponent from './components/SecondeComponent'\n import Destructoring, {Category} from './components/Destructoring'\n import State from './components/State'\n-import Context from './component/Context'\n+import Context from './components/Context'\n \n type textOrNull = string | null\n type fixed = 'isso' | 'ou' | 'aquilo'\n \n"
                 }
             ],
             "date": 1649442442617,

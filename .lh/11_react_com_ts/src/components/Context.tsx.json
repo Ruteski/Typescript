@@ -1,0 +1,30 @@
+{
+    "sourceFile": "11_react_com_ts/src/components/Context.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1649448434688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649448494474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n-import React from 'react';\n+import React, {useContext} from 'react';\n \n+import {AppContext} from '../App'\n+\n const Context = () => {\n    return (\n       <div>\n \n"
+                },
+                {
+                    "date": 1649448532657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n \n import {AppContext} from '../App'\n \n const Context = () => {\n+   const details = useContext(AppContext);\n+\n    return (\n       <div>\n \n       </div>\n"
+                },
+                {
+                    "date": 1649448640469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,17 @@\n const Context = () => {\n    const details = useContext(AppContext);\n \n    return (\n-      <div>\n-\n-      </div>\n+      <>\n+         {details && (\n+            <div>\n+               <h2>Linguagem: {details.language}</h2>\n+               <h4>FW: {details.framework}</h4>\n+               <p>QTD: {details.projects}</p>\n+            </div>\n+         )}\n+      </>\n    )\n }\n \n export default Context;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1649448434688,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\nconst Context = () => {\n   return (\n      <div>\n\n      </div>\n   )\n}\n\nexport default Context;"
+        }
+    ]
+}
