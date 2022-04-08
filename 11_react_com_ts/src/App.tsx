@@ -5,6 +5,10 @@ function App() {
   const age: number = 38;
   const isWorking: boolean = true;
 
+  const userGreeting = (name: string): string => {
+    return `Ola, ${name}`
+  }
+
   return (
     <div className="App">
       <h1>Typescript com react</h1>
@@ -13,6 +17,8 @@ function App() {
       {isWorking && (
         <p>Esta trabalhando</p>
       )}
+
+      <h3>{userGreeting(name)}</h3>
     </div>
   );
 }
